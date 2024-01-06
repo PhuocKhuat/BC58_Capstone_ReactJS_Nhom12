@@ -16,9 +16,30 @@
   width: 100%;
 }
 
-.logIn p{
-  padding: 0 50px;
+label{
+  margin-left: 28px !important;
+  font-size: larger !important;
+  margin-top: 25px !important;
 }
 .logIn:hover p{
-  color: orange;
+  color: #562921;
+}
+.logIn{
+  padding: 20px 240px;
+  background-color: #dab846;
+}
+.remember{
+  margin: 0 !important;
+}
+
+.dangNhap{
+   position: absolute;
+   top: 135px;
+   font-size: 15px !important;
+   background-color: #dab846;
+   padding-bottom: 10px;  
+   padding-right: 408px;
+}
+.dangNhapSpan{
+  padding: 20px 15px 8px;
 }
