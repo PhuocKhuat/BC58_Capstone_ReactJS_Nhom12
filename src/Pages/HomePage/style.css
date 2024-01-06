@@ -2,9 +2,10 @@
     width: 65%;
     margin: 0 auto;
 }
+
 .imgMovie{
     height: 355px;
-    width: 240px;
+    width: 241px !important;
 }
 /* .movieListTitle h2{
     background: url("/h3_movie_selection.gif");
@@ -12,7 +13,25 @@
     width: 56% !important;
     background-size: 302px 30px !important;
 } */
-
 .slick-next:before, .slick-prev:before{
-    color: gray;
+    background-color: yellow;
+}
+.movie{
+    position: relative;
+}
+.rescriptionMovie{
+    position: absolute;
+    left: 6px;
+    bottom: 10px;
+    transition: all 0.75s;
+}
+.nameMovie{
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+}
+.seeDetail, .buyTicket{
+    font-size: 15px;
+    font-weight: 600;
+    background-color: #d6b13d;
 }

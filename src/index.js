@@ -6,8 +6,6 @@ import reportWebVitals from './reportWebVitals';
 import {Provider} from 'react-redux';
 import movieSlice from './Redux/movieSlice';
 import { configureStore } from '@reduxjs/toolkit';
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 let store = configureStore({
