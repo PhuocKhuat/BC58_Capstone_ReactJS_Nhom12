@@ -2,22 +2,25 @@
     width: 65%;
     margin: 0 auto;
 }
-
 .imgMovie{
     height: 355px;
     width: 241px !important;
 }
-/* .movieListTitle h2{
-    background: url("/h3_movie_selection.gif");
-    display: inline-block;
-    width: 56% !important;
-    background-size: 302px 30px !important;
-} */
 .slick-next:before, .slick-prev:before{
-    background-color: yellow;
+    color: #d6b13d !important;
+    font-size: 3rem !important;
+}
+.slick-next:before{
+    position: relative;
+    left: -6px;
+}
+.slick-prev:before{
+    position: relative;
+    right: 22px;
 }
 .movie{
     position: relative;
+    margin: 0 3px;
 }
 .rescriptionMovie{
     position: absolute;
