@@ -2,6 +2,7 @@
     width: 65%;
     margin: 0 auto;
 }
+/* MovieList */
 .imgMovie{
     height: 355px;
     width: 241px !important;
@@ -37,4 +38,12 @@
     font-size: 15px;
     font-weight: 600;
     background-color: #d6b13d;
+}
+
+/* tabMovie */
+.titleMovieList h1{
+    color: #717171;
+    font-size: 48px;
+    font-weight: bold;
+    text-shadow: 2px 2px 2px #b9b9b9;
 }

@@ -4,6 +4,7 @@ const initialState = {
   user: JSON.parse(localStorage.getItem("User_Info")),
   movieList: [],
   isHovering: -1,
+  listSystemCinema : [],
 }
 
 const movieSlice = createSlice({
@@ -19,9 +20,12 @@ const movieSlice = createSlice({
     setIsHovering: (state, action)=>{
       state.isHovering = action.payload;
     },
+    setListSystemCinema: (state, action)=>{
+      state.listSystemCinema = action.payload;
+    },
   }
 });
 
-export const { setUser, setMovieList, setIsHovering } = movieSlice.actions
+export const { setUser, setMovieList, setIsHovering, setListSystemCinema } = movieSlice.actions
 
 export default movieSlice.reducer

@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import styleSlick from "./style.css";
 import { useDispatch, useSelector } from "react-redux";
 import { https } from "../../Service/api";
-import { GP02 } from "../../Settings/config";
+import { GP02, GP09 } from "../../Settings/config";
 import { setMovieList } from "../../Redux/movieSlice";
 import MovieList from "./MovieList";
 
@@ -33,7 +33,7 @@ export default function MultipleSlick() {
   let dispatch = useDispatch();
   useEffect(() => {
     https
-      .get(`/api/QuanLyPhim/LayDanhSachPhim?maNhom=${GP02}`)
+      .get(`/api/QuanLyPhim/LayDanhSachPhim?maNhom=${GP09}`)
       .then((res) => {
         console.log(res);
         dispatch(setMovieList(res.data.content));
