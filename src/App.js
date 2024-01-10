@@ -5,10 +5,12 @@ import HomePage from "./Pages/HomePage/HomePage";
 import Header from "./Components/Header/Header";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import Spinner from "./Components/Spinner/Spinner";
 
 function App() {
   return (
     <>
+      <Spinner/>
       <BrowserRouter>
       <Header/>
         <Routes>

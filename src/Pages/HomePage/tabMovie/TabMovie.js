@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
 import { Tabs, Tooltip } from "antd";
-import { https } from "../../Service/api";
+import { https } from "../../../Service/api";
 import { useDispatch, useSelector } from "react-redux";
-import { setListSystemCinema } from "../../Redux/movieSlice";
+import { setListSystemCinema } from "../../../Redux/movieSlice";
+import List from "./List";
 const onChange = (key) => {
   //   console.log(key);
 };
@@ -33,16 +34,18 @@ const TabMovie = () => {
             return {
               key: cumRap.tenCumRap,
               label: (
-                <div key={index} className="w-48 truncate">
+                <div key={index} className="text-left w-48 truncate">
                   <Tooltip title={cumRap.tenCumRap}>
-                    <h2>{cumRap.tenCumRap}</h2>
+                    <h2 className="tenCumRap">{cumRap.tenCumRap}</h2>
                   </Tooltip>
                   <Tooltip title={cumRap.diaChi}>
-                    <p>{cumRap.diaChi}</p>
+                    <p className="diaChi">{cumRap.diaChi}</p>
                   </Tooltip>
                 </div>
               ),
-              children: "",
+              children: (
+                <List  dSPhim = {cumRap.danhSachPhim}/>
+              ),
             };
           })}
         />

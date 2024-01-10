@@ -1,7 +1,7 @@
 import React from 'react'
 import "./style.css";
-import MultipleSlick from './MultipleSlick';
-import TabMovie from './TabMovie';
+import MultipleSlick from '../MovieList/MultipleSlick';
+import TabMovie from './tabMovie/TabMovie';
 
 export default function HomePage() {
   return (

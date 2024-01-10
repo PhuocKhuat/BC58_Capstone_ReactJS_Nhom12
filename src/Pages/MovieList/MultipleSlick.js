@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import styleSlick from "./style.css";
 import { useDispatch, useSelector } from "react-redux";
 import { https } from "../../Service/api";
-import { GP02, GP09 } from "../../Settings/config";
+import {  GP09 } from "../../Settings/config";
 import { setMovieList } from "../../Redux/movieSlice";
 import MovieList from "./MovieList";
 
