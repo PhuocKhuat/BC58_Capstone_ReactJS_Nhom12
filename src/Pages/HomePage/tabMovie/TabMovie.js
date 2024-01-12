@@ -34,7 +34,7 @@ const TabMovie = () => {
       children: (
         <Tabs
           tabPosition="left"
-          style={{ height: 550 }}
+          style={{ height: 620 }}
           items={heThongRap.lstCumRap.map((cumRap, index) => {
             return {
               key: cumRap.tenCumRap,
@@ -65,7 +65,7 @@ const TabMovie = () => {
       items={items}
       onChange={onChange}
       className="container border"
-      style={{ height: 550, width: "998px"}}
+      style={{ height: 620, width: "998px"}}
     />
   );
 };

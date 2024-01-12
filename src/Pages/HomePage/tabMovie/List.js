@@ -3,7 +3,7 @@ import React, { Fragment } from "react";
 
 export default function List({ dSPhim }) {
   return (
-    <div className="overflow-y-scroll" style={{ height: 550 }}>
+    <div className="overflow-y-scroll" style={{ height: 620 }}>
       {dSPhim.map((phim, index) => (
         <Fragment key={index} >
           <div className="flex space-x-5 mt-5 mb-12 ms-5">
@@ -12,7 +12,7 @@ export default function List({ dSPhim }) {
               <p className="tenPhim">{phim.tenPhim}</p>
               <div className="grid grid-cols-3">
                 {phim.lstLichChieuTheoPhim.map((khungGio, index) => (
-                  <p key={index} className="khungGio">
+                  <p key={index} className="khungGio hover:border-black duration-200">
                     {moment(khungGio.ngayChieuGioChieu).format(
                       "MMM Do YY - hh:mm"
                     )}

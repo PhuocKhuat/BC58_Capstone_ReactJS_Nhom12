@@ -7,12 +7,14 @@ import {Provider} from 'react-redux';
 import movieSlice from './Redux/movieSlice';
 import { configureStore } from '@reduxjs/toolkit';
 import spinnerSlice from './Redux/spinnerSlice';
+import carouselSlice from './Redux/carouselSlice';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 export let store = configureStore({
   reducer: {
     movieSlice,
     spinnerSlice,
+    carouselSlice,
   }
 })
 root.render(
