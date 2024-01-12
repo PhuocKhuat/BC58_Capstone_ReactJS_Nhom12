@@ -6,11 +6,13 @@ import reportWebVitals from './reportWebVitals';
 import {Provider} from 'react-redux';
 import movieSlice from './Redux/movieSlice';
 import { configureStore } from '@reduxjs/toolkit';
+import spinnerSlice from './Redux/spinnerSlice';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-let store = configureStore({
+export let store = configureStore({
   reducer: {
     movieSlice,
+    spinnerSlice,
   }
 })
 root.render(

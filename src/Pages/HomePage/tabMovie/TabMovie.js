@@ -4,6 +4,8 @@ import { https } from "../../../Service/api";
 import { useDispatch, useSelector } from "react-redux";
 import { setListSystemCinema } from "../../../Redux/movieSlice";
 import List from "./List";
+import './style.css'
+
 const onChange = (key) => {
   //   console.log(key);
 };
@@ -25,7 +27,10 @@ const TabMovie = () => {
   const items = listSystemCinema.map((heThongRap, index) => {
     return {
       key: heThongRap.maHeThongRap,
-      label: <img alt="" src={heThongRap.logo} className="w-14" key={index} />,
+      label: <div>
+        <img alt="" src={heThongRap.logo} className="w-14" key={index} />
+        <hr className="w-full mt-4"/>
+      </div>,
       children: (
         <Tabs
           tabPosition="left"
@@ -41,10 +46,11 @@ const TabMovie = () => {
                   <Tooltip title={cumRap.diaChi}>
                     <p className="diaChi">{cumRap.diaChi}</p>
                   </Tooltip>
+                  <hr className="w-full mt-7"/>
                 </div>
               ),
               children: (
-                <List  dSPhim = {cumRap.danhSachPhim}/>
+                <List  dSPhim = {cumRap.danhSachPhim} />
               ),
             };
           })}
@@ -58,8 +64,8 @@ const TabMovie = () => {
       defaultActiveKey="1"
       items={items}
       onChange={onChange}
-      className="container tabMovie"
-      style={{ height: 550 }}
+      className="container border"
+      style={{ height: 550, width: "998px"}}
     />
   );
 };

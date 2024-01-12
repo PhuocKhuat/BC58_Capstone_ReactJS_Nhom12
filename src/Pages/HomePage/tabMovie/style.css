@@ -1,0 +1,25 @@
+.titleMovieList h1{
+    color: #717171;
+    font-size: 48px;
+    font-weight: bold;
+    text-shadow: 2px 2px 2px #b9b9b9;
+}
+.tenCumRap{
+    color: #d6b13d;
+    overflow: hidden;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.tenPhim{
+    font-size: 18px;
+    font-weight: 600;
+}
+.diaChi{
+    color: #b39d9d;
+}
+.hrTag{
+    width: 90%;
+}
+:where(.css-dev-only-do-not-override-gzal6t).ant-tabs-left >.ant-tabs-content-holder >.ant-tabs-content>.ant-tabs-tabpane, :where(.css-dev-only-do-not-override-gzal6t).ant-tabs-left >div>.ant-tabs-content-holder >.ant-tabs-content>.ant-tabs-tabpane {
+    padding-left: 0;
+}
