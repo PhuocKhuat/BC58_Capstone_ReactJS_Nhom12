@@ -1,0 +1,10 @@
+.container{
+    width: 65%;
+    margin: 0 auto;
+}
+.slick-dots li button:before{
+    display: none;
+}
+.banner{
+    margin-top: 16px !important;
+}
