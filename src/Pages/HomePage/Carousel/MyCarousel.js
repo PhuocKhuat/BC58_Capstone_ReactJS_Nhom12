@@ -5,19 +5,20 @@ import { setListBanner } from "../../../Redux/carouselSlice";
 import { Carousel } from "antd";
 import "./style.css";
 
-const contentStyle = {
-  height: "510px",
+let contentStyle = {
+  height: "462px",
   color: "#fff",
   lineHeight: "160px",
   textAlign: "center",
-  // background: "#364d79",
+  background: "#364d79",
   backgroundPosition: "center",
-  backgroundSize: "100%",
+  backgroundSize: "cover",
   backgroundRepeat: "no-repeat",
 };
-export default function MyCarousel() {
+
+const MyCarousel = () => {
   const { carousel } = useSelector((state) => state.carouselSlice);
-  console.log("🚀 ~ Carousel ~ carousel:", carousel);
+  // console.log("🚀 ~ Carousel ~ carousel:", carousel);
   const dispatch = useDispatch();
   useEffect(() => {
     https
@@ -32,10 +33,15 @@ export default function MyCarousel() {
   }, []);
 
   const renderBanner = () => {
-    return carousel.map((banner, index) => {    
+    return carousel.map((banner, index) => {
       return (
         <div key={index} className="banner">
-          <h3 style={{...contentStyle, backgroundImage: `url(${banner.hinhAnh})`}}>
+          <h3
+            style={{
+              ...contentStyle,
+              backgroundImage: `url(${banner.hinhAnh})`,
+            }}
+          >
             <img alt="" className="w-full opacity-0" src={banner.hinhAnh} />
           </h3>
         </div>
@@ -48,4 +54,5 @@ export default function MyCarousel() {
       {renderBanner()}
     </Carousel>
   );
-}
+};
+export default MyCarousel;

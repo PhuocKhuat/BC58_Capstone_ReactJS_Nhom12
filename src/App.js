@@ -6,6 +6,7 @@ import Header from "./Components/Header/Header";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import Spinner from "./Components/Spinner/Spinner";
+import Footer from "./Components/Footer/Footer";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element={<HomePage/>}/>
           <Route path="/login" element={<LoginPage />} />
         </Routes>
+      <Footer/>
       </BrowserRouter>
     </>
   );

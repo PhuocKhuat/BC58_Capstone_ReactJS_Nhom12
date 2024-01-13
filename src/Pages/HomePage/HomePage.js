@@ -2,7 +2,7 @@ import React from 'react'
 import "./style.css";
 import MultipleSlick from '../MovieList/MultipleSlick';
 import TabMovie from './TabMovie/TabMovie';
-import Carousel from './Carousel/Carousel';
+import Carousel from './Carousel/MyCarousel';
 
 export default function HomePage() {
   return (
