@@ -5,3 +5,10 @@
 .login:hover, .signup:hover, .user:hover, .logout:hover{
     color: #562921;
 }
+.logo{
+    color: #d7b440;
+}
+.nameLogo{
+    font-size: 16px;
+    color: #562921;
+}

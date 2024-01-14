@@ -1,0 +1,40 @@
+.container{
+    width: 65%;
+    margin: 0 auto;
+}
+.footer, .footerDesktop{
+    background-color: #fdfcf0 !important;
+}
+.footerDesktop{
+    padding-top: 30px;
+}
+.policy{
+    padding: 20px 0;
+}
+h3{
+    font-weight: bold;
+    font-size: 14px;
+    color: #636363;
+    margin-bottom: 8px;
+}
+li{
+    color: #636363;
+    line-height: 22px;
+}
+li:hover{
+    color: #8b4c4b;
+}
+.footerPolicy{
+    border-bottom: 2px solid #222;
+    border-top: 2px solid #222;
+}
+p{
+    color: #636363;
+    font-size: 14px;
+}
+.footerCertificate{
+    padding: 10px 0;
+}
+.logo{
+    color: #d7b440;
+}
