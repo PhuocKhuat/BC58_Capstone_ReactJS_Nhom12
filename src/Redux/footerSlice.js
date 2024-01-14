@@ -1,14 +1,11 @@
-import { createSlice } from "@reduxjs/toolkit";
-// import { https } from "../Service/api";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { https } from "../Service/api";
 
-// export const footerSliceAction = createAsyncThunk(
-//   "footerSliceAction",
-//   async () => {
-//     let res = await https.get("/api/QuanLyRap/LayThongTinHeThongRap");
-//     console.log("🚀 ~ footerSliceAction ~ res:", res);
-//     return res.data.content;
-//   }
-// );
+export const footerSliceAction = createAsyncThunk("footerSliceAction", async () => {
+  let res = await https.get("/api/QuanLyRap/LayThongTinHeThongRap");
+  console.log("🚀 ~ footerSliceAction ~ res:", res);
+  return res.data.content;
+});
 
 const initialState = {
   infoRap: [],
@@ -22,14 +19,13 @@ const footerSlice = createSlice({
       state.infoRap = action.payload;
     },
   },
-  // extraReducers: {
-  //   [footerSliceAction.fulfilled]: (state, action) => {
-  //     state.infoRap = action.payload;
-  //   },
-  //   [footerSliceAction.pending]: (state, action) => {
-  //     state.infoRap = action.payload;
-  //   },
-  // },
+  extraReducers: (builder)=>{
+    builder.addCase(footerSliceAction.fulfilled,(state, action) => {
+      // action is inferred correctly here if using TS
+      state.infoRap = action.payload;
+    })
+  }
+  
 });
 
 export const { setInfoRap } = footerSlice.actions;
