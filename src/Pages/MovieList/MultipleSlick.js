@@ -44,7 +44,7 @@ export default function MultipleSlick() {
   }, []);
   const settings = {
     className: "center variable-width",
-    centerMode: true,
+    // centerMode: true,
     infinite: true,
     slidesToShow: 1,
     speed: 500,
@@ -59,16 +59,16 @@ export default function MultipleSlick() {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
+          slidesToScroll: 1,
         }
       },
       
       {
-        breakpoint: 600,
+        breakpoint: 768,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 3,
           slidesToScroll: 1,
-          initialSlide: 6
+          initialSlide: 6,
         }
       },
       {
@@ -84,7 +84,7 @@ export default function MultipleSlick() {
 
   return (
     <div className="container">
-      <Slider {...settings}>
+      <Slider {...settings} className="slider">
         {movieList.map((movie, index) => <MovieList movie={movie} index={index}/>)}
       </Slider>
     </div>

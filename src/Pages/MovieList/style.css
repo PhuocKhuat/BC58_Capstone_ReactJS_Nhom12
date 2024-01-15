@@ -1,3 +1,8 @@
+.slider{
+    width: 97.5%;
+    
+}
+
 /* MovieList */
 .imgMovie{
     height: 355px;
@@ -9,7 +14,7 @@
 }
 .slick-next:before{
     position: relative;
-    left: -6px;
+    left: 32px;
 }
 .slick-prev:before{
     position: relative;

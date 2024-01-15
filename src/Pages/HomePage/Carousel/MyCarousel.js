@@ -6,7 +6,7 @@ import { Carousel } from "antd";
 import "./style.css";
 
 let contentStyle = {
-  height: "462px",
+  height: "500px",
   color: "#fff",
   lineHeight: "160px",
   textAlign: "center",
@@ -39,7 +39,7 @@ const MyCarousel = () => {
           <h3
             style={{
               ...contentStyle,
-              backgroundImage: `url(${banner.hinhAnh})`,
+              backgroundImage: `url(${banner.hinhAnh})`, objectFit: "cover"
             }}
           >
             <img alt="" className="w-full opacity-0" src={banner.hinhAnh} />

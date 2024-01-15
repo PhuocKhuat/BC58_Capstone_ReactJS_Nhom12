@@ -1,5 +1,5 @@
 .container{
-    width: 65%;
+    width: 65% !important;
     margin: 0 auto;
 }
 .cinemaSystem{
@@ -11,3 +11,39 @@
     @apply ms-0 md:ms-80 lg:ms-96
 }
 
+@media screen and (max-width: 1286px) {
+    .container{
+        width: 80% !important;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .container{
+        width: 95% !important;
+        margin: 0 !important;
+    }
+    .slick-list{
+        width: 130% !important;
+    }
+    .slick-next:before{
+        opacity: 0 !important;
+    }
+}
+@media screen and (max-width: 768px) {
+    .slick-list{
+        width: 117% !important;
+        margin-left: 10px !important;
+    }
+    .slick-next:before{
+        margin-left: 82px !important;
+        position: relative;
+        bottom: 190px;
+        opacity: 1 !important;
+        width: 100% !important;
+    }
+    .slick-prev:before{
+        margin-left: 45px !important;
+        position: relative;
+        bottom: 190px;
+        z-index: 100 !important;
+    }
+}
