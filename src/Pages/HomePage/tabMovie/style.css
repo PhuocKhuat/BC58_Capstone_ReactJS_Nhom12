@@ -1,3 +1,4 @@
+/* TAB MOVIE */
 .titleMovieList h1{
     color: #717171;
     font-size: 48px;
@@ -23,3 +24,30 @@
 :where(.css-dev-only-do-not-override-gzal6t).ant-tabs-left >.ant-tabs-content-holder >.ant-tabs-content>.ant-tabs-tabpane, :where(.css-dev-only-do-not-override-gzal6t).ant-tabs-left >div>.ant-tabs-content-holder >.ant-tabs-content>.ant-tabs-tabpane {
     padding-left: 0;
 }
+.tabCol2{
+    @apply sm:text-left sm:truncate sm:w-28 md:w-36 md:truncate lg:w-48
+}
+.tabCol1{
+    @apply hidden sm:block
+}
+
+/* LIST */
+.phim{
+    @apply flex space-x-5 mt-5 mb-12 ms-5
+}
+.khungGio{
+    color: #d6b13d;
+    border: 1px solid #e4e4e4;
+    cursor: pointer;
+    margin: 0px 6px 16px 0px;
+    padding: 8px;
+    border-radius: 4px;
+    text-decoration: none;
+    background-color: rgba(246, 246, 246, 0.5);
+    font-size: 14px;
+    width: 98%;
+}
+.danhSachGio{
+    @apply grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3
+}
+/* ant-tabs-nav-list */

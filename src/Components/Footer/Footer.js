@@ -22,28 +22,34 @@ export default function Footer() {
   return (
     <div className="footer">
       <div className="container footerDesktop mt-8">
-        <div className="footerPolicy grid grid-cols-3 sm:grid sm:grid-cols-3 lg:grid-cols-4">
+        <div className="footerPolicy grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4">
           <div className="policy">
             <h3>CyberMovie</h3>
             <ul>
               <li>Introduce</li>
+              <hr />
               <li>Recruitment</li>
+              <hr />
               <li>For partners</li>
+              <hr />
             </ul>
           </div>
           <div className="policy">
             <h3>Terms of use</h3>
             <ul>
               <li>General Terms</li>
+              <hr />
               <li>Payment policy</li>
+              <hr />
               <li>Privacy Policy</li>
+              <hr />
             </ul>
           </div>
           <div className="policy">
             <h3>Partners</h3>
-            <p className="grid grid-cols-3 space-x-3">{renderPartners()}</p>
+            <p className="grid grid-cols-6 sm:grid-cols-3 space-x-3">{renderPartners()}</p>
           </div>
-          <div className="policy lg:relative lg:left-2 lg:bg-transparent lg:w-full lg:text-left md:left-24 sm:relative sm:left-10 sm:w-max sm:text-center sm:bg-gray-100">
+          <div className="policy customer">
               <h3>Customer Care</h3>
               <ul>
                 <li>Hotline: 094.145.1394</li>

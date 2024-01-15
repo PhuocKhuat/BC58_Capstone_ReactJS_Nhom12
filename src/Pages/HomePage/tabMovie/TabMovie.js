@@ -39,7 +39,7 @@ const TabMovie = () => {
             return {
               key: cumRap.tenCumRap,
               label: (
-                <div key={index} className="text-left w-48 truncate">
+                <div key={index} className="tabCol2">
                   <Tooltip title={cumRap.tenCumRap}>
                     <h2 className="tenCumRap">{cumRap.tenCumRap}</h2>
                   </Tooltip>
@@ -59,7 +59,8 @@ const TabMovie = () => {
     };
   });
   return (
-    <Tabs
+    <div className="tabCol1">
+      <Tabs
       tabPosition="left"
       defaultActiveKey="1"
       items={items}
@@ -67,6 +68,7 @@ const TabMovie = () => {
       className="container border"
       style={{ height: 620, width: "998px"}}
     />
+    </div>
   );
 };
 export default TabMovie;

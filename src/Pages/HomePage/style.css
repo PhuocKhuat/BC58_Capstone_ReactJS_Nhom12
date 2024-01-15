@@ -2,16 +2,12 @@
     width: 65%;
     margin: 0 auto;
 }
-/* List */
-.khungGio{
-    color: #d6b13d;
-    /* width: 45%; */
-    border: 1px solid #e4e4e4;
-    cursor: pointer;
-    margin: 0px 16px 16px 0px;
-    padding: 8px;
-    border-radius: 4px;
-    text-decoration: none;
-    background-color: rgba(246, 246, 246, 0.5);
-    font-size: 14px;
+.cinemaSystem{
+    position: relative;
+    top: 14px;
+    @apply ms-28 hidden pt-6 pb-16 md:ms-0 sm:block lg:ms-48
 }
+.titleMovieList{
+    @apply ms-0 md:ms-80 lg:ms-96
+}
+
