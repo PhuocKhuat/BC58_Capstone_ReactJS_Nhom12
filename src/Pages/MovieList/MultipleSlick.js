@@ -66,7 +66,7 @@ export default function MultipleSlick() {
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 1,
           slidesToScroll: 1,
           initialSlide: 6,
         }

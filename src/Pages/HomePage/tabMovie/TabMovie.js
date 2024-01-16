@@ -1,74 +1,29 @@
-import React, { useEffect } from "react";
-import { Tabs, Tooltip } from "antd";
-import { https } from "../../../Service/api";
-import { useDispatch, useSelector } from "react-redux";
-import { setListSystemCinema } from "../../../Redux/movieSlice";
-import List from "./List";
-import './style.css'
+import React from 'react'
+import { useMediaQuery } from 'react-responsive'
+import TabMovieMobile from './TabMovieMobile'
+import TMovieDeskTab from './TMovieDeskTab'
 
-const onChange = (key) => {
-  //   console.log(key);
-};
-const TabMovie = () => {
-  let dispatch = useDispatch();
-  let { listSystemCinema } = useSelector((state) => state.movieSlice);
-  console.log("🚀 ~ TabMovie ~ listSystemCinema:", listSystemCinema);
-  useEffect(() => {
-    https
-      .get("/api/QuanLyRap/LayThongTinLichChieuHeThongRap?maNhom=GP01")
-      .then((res) => {
-        console.log(res);
-        dispatch(setListSystemCinema(res.data.content));
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
-  const items = listSystemCinema.map((heThongRap, index) => {
-    return {
-      key: heThongRap.maHeThongRap,
-      label: <div>
-        <img alt="" src={heThongRap.logo} className="w-14" key={index} />
-        <hr className="w-full mt-4"/>
-      </div>,
-      children: (
-        <Tabs
-          tabPosition="left"
-          style={{ height: 620 }}
-          items={heThongRap.lstCumRap.map((cumRap, index) => {
-            return {
-              key: cumRap.tenCumRap,
-              label: (
-                <div key={index} className="tabCol2">
-                  <Tooltip title={cumRap.tenCumRap}>
-                    <h2 className="tenCumRap">{cumRap.tenCumRap}</h2>
-                  </Tooltip>
-                  <Tooltip title={cumRap.diaChi}>
-                    <p className="diaChi">{cumRap.diaChi}</p>
-                  </Tooltip>
-                  <hr className="w-full mt-7"/>
-                </div>
-              ),
-              children: (
-                <List  dSPhim = {cumRap.danhSachPhim} />
-              ),
-            };
-          })}
-        />
-      ),
-    };
-  });
+export default function TabMovie() {
+  const DesktopAndTablet = ({ children }) => {
+    const isDesktop = useMediaQuery({ minWidth: 640 })
+    return isDesktop ? children : null
+  }
+  const Mobile = ({ children }) => {
+    const isMobile = useMediaQuery({ maxWidth: 639.98 })
+    return isMobile ? children : null
+  }
+  const Default = ({ children }) => {
+    const isNotMobile = useMediaQuery({ minWidth: 640 })
+    return isNotMobile ? children : null
+  }
   return (
-    <div className="tabCol1">
-      <Tabs
-      tabPosition="left"
-      defaultActiveKey="1"
-      items={items}
-      onChange={onChange}
-      className="container border"
-      style={{ height: 620, width: "998px"}}
-    />
+    <div>
+      <DesktopAndTablet>
+        <TMovieDeskTab/>
+      </DesktopAndTablet>
+      <Mobile>
+        <TabMovieMobile/>
+      </Mobile>
     </div>
-  );
-};
-export default TabMovie;
+  )
+}

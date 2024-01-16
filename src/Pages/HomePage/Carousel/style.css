@@ -8,15 +8,3 @@
 .banner{
     margin-top: 16px !important;
 }
-.slick-next:before, .slick-prev:before{
-    color: #d6b13d !important;
-    font-size: 3rem !important;
-}
-.slick-next:before{
-    position: relative;
-    left: -6px;
-}
-.slick-prev:before{
-    position: relative;
-    right: 22px;
-}

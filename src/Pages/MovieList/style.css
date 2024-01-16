@@ -1,42 +1,86 @@
-.slider{
-    width: 97.5%;
-    
+/* MultipleSlick */
+.slider {
+  width: 97.5%;
+}
+.slick-next:before,
+.slick-prev:before {
+  color: #d6b13d !important;
+  font-size: 3rem !important;
+}
+.slick-next:before,
+.slick-prev:before {
+  color: #d6b13d !important;
+  font-size: 3rem !important;
+}
+.slick-next:before {
+  position: relative;
+}
+.slick-prev:before {
+  position: relative;
+  right: 22px;
 }
 
 /* MovieList */
-.imgMovie{
-    height: 355px;
-    width: 241px !important;
+.imgMovie {
+  height: 355px;
+  width: 241px !important;
 }
-.slick-next:before, .slick-prev:before{
-    color: #d6b13d !important;
-    font-size: 3rem !important;
+.movie {
+  position: relative;
+  margin: 0 3px;
 }
-.slick-next:before{
-    position: relative;
-    left: 32px;
+.rescriptionMovie {
+  position: absolute;
+  left: 6px;
+  bottom: 10px;
+  transition: all 0.75s;
 }
-.slick-prev:before{
-    position: relative;
-    right: 22px;
+.nameMovie {
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
 }
-.movie{
-    position: relative;
-    margin: 0 3px;
+.seeDetail,
+.buyTicket {
+  font-size: 15px;
+  font-weight: 600;
+  background-color: #d6b13d;
 }
-.rescriptionMovie{
-    position: absolute;
-    left: 6px;
+
+/* RESPONSIVE */
+@media screen and (max-width: 768px) {
+  .slider {
+    width: 92%;
+  }
+  .slick-next:before {
     bottom: 10px;
-    transition: all 0.75s;
+    right: 25px !important;
+  }
+  .slick-prev:before {
+    bottom: 10px;
+    z-index: 100 !important;
+  }
 }
-.nameMovie{
-    color: white;
-    text-align: center;
-    text-transform: uppercase;
+@media screen and (max-width: 720px) {
+  .slider {
+    width: 86%;
+  }
+  .slick-next:before {
+    right: 10px;
+  }
 }
-.seeDetail, .buyTicket{
-    font-size: 15px;
-    font-weight: 600;
-    background-color: #d6b13d;
+@media screen and (max-width: 695px) {
+  .slider {
+    width: 82%;
+  }
 }
+@media screen and (max-width: 510px) {
+  .slick-next:before {
+    right: 42px !important;
+  }
+}
+@media screen and (max-width: 432px) {
+    .slick-next:before {
+      right: 56px !important;
+    }
+  }

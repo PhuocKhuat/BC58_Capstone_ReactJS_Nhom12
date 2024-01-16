@@ -9,6 +9,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import spinnerSlice from './Redux/spinnerSlice';
 import carouselSlice from './Redux/carouselSlice';
 import footerSlice from './Redux/footerSlice';
+import tapMovieSlice from './Redux/tapMovieSlice';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 export let store = configureStore({
@@ -17,6 +18,7 @@ export let store = configureStore({
     spinnerSlice,
     carouselSlice,
     footerSlice,
+    tapMovieSlice,
   }
 })
 root.render(

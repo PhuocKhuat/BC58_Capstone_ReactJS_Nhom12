@@ -1,14 +1,20 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { footerSliceAction } from "../../Redux/footerSlice";
 import "./style.css";
+import { https } from "../../Service/api";
+import { setInfoRap } from "../../Redux/footerSlice";
 
 export default function Footer() {
   let { infoRap } = useSelector((state) => state.footerSlice);
   // console.log("🚀 ~ FooterDesktop ~ infoRap:", infoRap);
   let dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(footerSliceAction());
+  useEffect(async () => {
+    try {
+      let res = await https.get("/api/QuanLyRap/LayThongTinHeThongRap");
+      dispatch(setInfoRap(res.data.content));
+    } catch (error) {
+      console.log("🚀 ~ useEffect ~ error:", error);
+    }
   }, []);
   let renderPartners = () =>
     infoRap.map((logo) => (

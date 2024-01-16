@@ -4,7 +4,6 @@ const initialState = {
   user: JSON.parse(localStorage.getItem("User_Info")),
   movieList: [],
   isHovering: -1,
-  listSystemCinema : [],
 }
 
 const movieSlice = createSlice({

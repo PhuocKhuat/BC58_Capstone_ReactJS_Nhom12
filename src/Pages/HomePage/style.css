@@ -5,7 +5,7 @@
 .cinemaSystem{
     position: relative;
     top: 14px;
-    @apply ms-28 hidden pt-6 pb-16 md:ms-0 sm:block lg:ms-48
+    @apply ms-28 pt-6 pb-16 md:ms-0 lg:ms-48
 }
 .titleMovieList{
     @apply ms-0 md:ms-80 lg:ms-96
