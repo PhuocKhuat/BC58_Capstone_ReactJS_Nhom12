@@ -62,7 +62,6 @@ export default function Header() {
   };
   return (
     <div>
-      <div></div>
       <div
         className="shadow shadow-black"
         style={{ backgroundColor: "#1f2022" }}

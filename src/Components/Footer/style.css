@@ -33,6 +33,7 @@ li:hover{
 .footerPolicy{
     border-bottom: 2px solid #222;
     border-top: 2px solid #222;
+    @apply ms-5 md:ms-5
 }
 p{
     color: #636363;

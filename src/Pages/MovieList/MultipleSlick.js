@@ -44,7 +44,6 @@ export default function MultipleSlick() {
   }, []);
   const settings = {
     className: "center variable-width",
-    // centerMode: true,
     infinite: true,
     slidesToShow: 1,
     speed: 500,

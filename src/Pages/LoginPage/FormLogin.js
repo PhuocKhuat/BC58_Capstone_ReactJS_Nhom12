@@ -31,7 +31,7 @@ export const FormLogin = () => {
   };
   
   return (
-    <div className="mt-24 ms-44">
+    <div className="formLogin">
       <h2 className="pt-5 ps-10 font-semibold text-white dangNhap">
         <span className="dangNhapSpan">LOGIN</span>
       </h2>

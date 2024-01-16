@@ -3,6 +3,7 @@
     margin: 0 auto;
 }
 
+/* FormLogin */
 #components-form-demo-normal-login .login-form {
   max-width: 300px;
 }
@@ -31,7 +32,6 @@ label{
 .remember{
   margin: 0 !important;
 }
-
 .dangNhap{
    position: absolute;
    top: 135px;
@@ -42,4 +42,39 @@ label{
 }
 .dangNhapSpan{
   padding: 20px 15px 8px;
+}
+.formLogin{
+  @apply mt-24 mb-10
+}
+.login-form{
+  width: 524px !important;
+}
+.slick-next:before,
+.slick-prev:before {
+  color: #d6b13d !important;
+  font-size: 3rem !important;
+}
+.slick-next:before,
+.slick-prev:before {
+  color: #d6b13d !important;
+  font-size: 3rem !important;
+}
+.slick-next:before {
+  position: relative;
+  top: 70px;
+}
+.slick-prev:before {
+  position: relative;
+  right: 22px;
+  top: 70px;
+}
+
+/* LoginSlick */
+.loginSlick{
+  margin-left: 200px;
+  width: 46%;
+  background-color: white;
+}
+img{
+  width: 427px;
 }
