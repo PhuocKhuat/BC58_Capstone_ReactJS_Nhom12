@@ -53,6 +53,7 @@ export const FormLogin = () => {
         <Form.Item
           label="Username"
           name="taiKhoan"
+          className="formUser"
           rules={[
             {
               required: true,
@@ -67,6 +68,7 @@ export const FormLogin = () => {
         </Form.Item>
         <Form.Item
           label="Password"
+          className="formUser"
           name="matKhau"
           rules={[
             {
@@ -91,7 +93,7 @@ export const FormLogin = () => {
             <Checkbox>Remember me</Checkbox>
           </Form.Item>
           <a
-            className="login-form-forgot"
+            className="login-form-forgot forgotPass"
             style={{ position: "absolute", left: "370px", bottom: "85px" }}
             href=""
           >

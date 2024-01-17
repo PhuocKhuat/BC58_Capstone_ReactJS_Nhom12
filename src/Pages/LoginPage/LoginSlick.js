@@ -56,7 +56,7 @@ export default function LoginSlick() {
           <img className="img2" alt="vePhim" src="/img/comBoBapVaVePhim.png" />
           <div className="khuyenMaiBap">
           <h3 className="chuongTrinh">Chương trình cặp đôi</h3>
-          <p>Khi một cặp đôi đi xem phim cùng nhau sẽ được miễn phí bắp</p>
+          <p className="moTa">Khi một cặp đôi đi xem phim cùng nhau sẽ được miễn phí bắp</p>
           </div>
         </div>
         <div className="cTKMai">
