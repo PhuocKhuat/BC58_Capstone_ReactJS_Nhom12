@@ -1,0 +1,161 @@
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* FormLogin */
+#components-form-demo-normal-login .login-form {
+  max-width: 300px;
+}
+#components-form-demo-normal-login .login-form-forgot {
+  float: right;
+}
+#components-form-demo-normal-login .ant-col-rtl .login-form-forgot {
+  float: left;
+}
+#components-form-demo-normal-login .login-form-button {
+  width: 100%;
+}
+
+label {
+  margin-left: 28px !important;
+  font-size: larger !important;
+  margin-top: 25px !important;
+}
+.logIn:hover p {
+  color: #562921;
+}
+.logIn {
+  padding: 20px 240px;
+  background-color: #dab846;
+}
+.remember {
+  margin: 0 !important;
+}
+.dangNhap {
+  position: absolute;
+  top: 135px;
+  font-size: 15px !important;
+  background-color: #dab846;
+  padding-bottom: 10px;
+  padding-right: 408px;
+}
+.dangNhapSpan {
+  padding: 20px 15px 8px;
+}
+.formLogin {
+  @apply mt-24 mb-10;
+}
+.login-form {
+  width: 524px !important;
+}
+.slick-next:before,
+.slick-prev:before {
+  color: #d6b13d !important;
+  font-size: 2rem !important;
+}
+.slick-next:before {
+  position: relative;
+  right: 5px;
+}
+.slick-prev:before {
+  position: relative;
+}
+
+/* LoginSlick */
+.loginSlick {
+  margin-left: 100px;
+  margin-top: 40px;
+  width: 90%;
+  background-color: white;
+}
+.img2 {
+  width: 400px;
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+.img1 {
+  margin-left: 50px;
+  margin-top: 90px;
+  width: 350px;
+}
+.img3 {
+  width: 350px;
+  height: 340px;
+  margin-left: 50px;
+  margin-top: 15px;
+}
+.slick-list {
+  height: 522px;
+}
+.slick-dots {
+  bottom: 15px !important;
+}
+.slick-dots li button {
+  border-radius: 50%;
+  width: 15px !important;
+  height: 15px !important;
+  background-color: #999999 !important;
+}
+.slick-dots li button:hover {
+  background-color: #522722 !important;
+}
+.slick-dots li button:focus {
+  background-color: #dab846 !important;
+}
+@media screen and (max-width: 1188px) {
+  .loginPage {
+    margin: 0 !important;
+  }
+  .loginSlick {
+    margin-left: 200px;
+  }
+  .img1 {
+    width: 300px;
+  }
+}
+@media screen and (max-width: 1064px) {
+  .img3 {
+    width: 300px;
+  }
+  .img2 {
+    width: 380px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .loginSlick {
+    width: 78%;
+  }
+  .img3 {
+    width: 288px;
+    height: 278px;
+    padding-right: 65px !important;
+  }
+  .img2 {
+    width: 310px;
+    padding-right: 25px !important;
+  }
+  .img1 {
+    width: 290px;
+    padding-right: 65px !important;
+  }
+  .slick-next:before,
+  .slick-prev:before {
+    opacity: 0 !important;
+  }
+}
+div .khuyenMaiVe{
+  position: relative;
+  left: 20px;
+  bottom: 58px;
+}
+div h3{
+  text-align: center;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+.cTKMai p{
+  text-align: center;
+  width: 97%;
+  font-size: 16px;
+}

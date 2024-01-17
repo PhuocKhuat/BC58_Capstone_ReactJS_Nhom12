@@ -8,3 +8,14 @@
 .banner{
     margin-top: 16px !important;
 }
+:where(.css-dev-only-do-not-override-gzal6t).ant-carousel .slick-dots li button {
+    width: 15px;
+    height: 15px;
+    line-height: 15px;
+    border-radius: 50%;
+    bottom: 20px;
+    background-color: #fdfcf0;
+}
+:where(.css-dev-only-do-not-override-gzal6t).ant-carousel .slick-dots li.slick-active button {
+    background-color: #d7b440;
+}

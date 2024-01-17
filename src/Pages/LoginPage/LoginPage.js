@@ -1,11 +1,11 @@
 import React from "react";
 import FormLogin from "./FormLogin";
-import "./style.css";
+import "./styles.css";
 import LoginSlick from "./LoginSlick";
 
 export default function LoginPage() {
   return (
-    <div className="container">
+    <div className="container grid grid-cols-2 loginPage">
       <FormLogin />
       <LoginSlick />
     </div>
