@@ -5,7 +5,7 @@ import LoginSlick from "./LoginSlick";
 
 export default function LoginPage() {
   return (
-    <div className="container grid grid-cols-2 loginPage">
+    <div className="container loginPage">
       <FormLogin />
       <LoginSlick />
     </div>

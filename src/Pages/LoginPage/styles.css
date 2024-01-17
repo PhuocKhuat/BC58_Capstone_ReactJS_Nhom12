@@ -44,22 +44,22 @@ label {
   padding: 20px 15px 8px;
 }
 .formLogin {
-  @apply mt-24 mb-10;
+  @apply mt-24 mb-10 sm:ms-5 md:ms-0 
 }
 .login-form {
   width: 524px !important;
 }
-.slick-next:before,
-.slick-prev:before {
-  color: #d6b13d !important;
+.loginSlick .slick-next:before,
+.loginSlick .slick-prev:before {
   font-size: 2rem !important;
 }
-.slick-next:before {
+.loginSlick .slick-next:before {
   position: relative;
   right: 5px;
 }
-.slick-prev:before {
+.loginSlick .slick-prev:before {
   position: relative;
+  right: 7px;
 }
 
 /* LoginSlick */
@@ -72,37 +72,64 @@ label {
 .img2 {
   width: 400px;
   margin-left: 20px;
-  margin-bottom: 15px;
+  margin-bottom: -22px !important;
+  bottom: 24px;
+  position: relative;
 }
 .img1 {
-  margin-left: 50px;
-  margin-top: 90px;
+  margin-left: 48px;
+  margin-top: 87px;
   width: 350px;
 }
 .img3 {
   width: 350px;
   height: 340px;
-  margin-left: 50px;
+  margin-left: 33px;
   margin-top: 15px;
 }
-.slick-list {
+.loginSlick .slick-list {
   height: 522px;
 }
-.slick-dots {
+.loginSlick .slick-dots {
   bottom: 15px !important;
 }
-.slick-dots li button {
+.loginSlick .slick-dots li button {
   border-radius: 50%;
   width: 15px !important;
   height: 15px !important;
   background-color: #999999 !important;
 }
-.slick-dots li button:hover {
+.loginSlick .slick-dots li button:hover {
   background-color: #522722 !important;
 }
-.slick-dots li button:focus {
+.loginSlick .slick-dots li button:focus {
   background-color: #dab846 !important;
 }
+.khuyenMaiVe {
+  position: relative;
+  left: 25px;
+  bottom: 58px;
+}
+.khuyenMaiBap {
+  margin-left: 33px;
+  width: 85%;
+}
+.khuyenMaiXu {
+  margin-top: 24px;
+  margin-left: 23px;
+}
+.chuongTrinh {
+  text-align: center;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+.cTKMai p {
+  text-align: center;
+  width: 95%;
+  font-size: 16px;
+}
+
+/* Responsive */
 @media screen and (max-width: 1188px) {
   .loginPage {
     margin: 0 !important;
@@ -111,7 +138,10 @@ label {
     margin-left: 200px;
   }
   .img1 {
-    width: 300px;
+    padding-right: 18px;
+  }
+  .khuyenMaiVe {
+    bottom: 41px;
   }
 }
 @media screen and (max-width: 1064px) {
@@ -120,6 +150,12 @@ label {
   }
   .img2 {
     width: 380px;
+  }
+  .cTKMai p {
+    width: 78%;
+  }
+  .chuongTrinh {
+    padding-right: 88px;
   }
 }
 @media screen and (max-width: 1000px) {
@@ -130,32 +166,53 @@ label {
     width: 288px;
     height: 278px;
     padding-right: 65px !important;
+    top: 33px;
+    position: relative;
   }
   .img2 {
     width: 310px;
     padding-right: 25px !important;
+    position: relative;
+    top: 77px;
   }
   .img1 {
-    width: 290px;
+    width: 305px;
     padding-right: 65px !important;
+    position: relative;
+    top: 75px;
+    right: 14px;
   }
-  .slick-next:before,
+  .loginSlick .slick-next:before,
   .slick-prev:before {
     opacity: 0 !important;
   }
+  .cTKMai p {
+    width: 59%;
+  }
+  .chuongTrinh {
+    padding-right: 138px;
+  }
+  .khuyenMaiXu {
+    margin-top: 84px;
+  }
+  .khuyenMaiBap{
+    margin-top: 116px;
+  }
+  .khuyenMaiVe{
+    bottom: -51px;
+  }
 }
-div .khuyenMaiVe{
-  position: relative;
-  left: 20px;
-  bottom: 58px;
-}
-div h3{
-  text-align: center;
-  font-size: 18px;
-  text-transform: uppercase;
-}
-.cTKMai p{
-  text-align: center;
-  width: 97%;
-  font-size: 16px;
+@media screen and (max-width: 768px) {
+  .loginPage{
+    @apply grid grid-cols-1 md:grid-cols-2 
+  }
+  .dangNhap{
+    width: 93vw !important;
+  }
+  .login-form{
+    width: 92.5vw !important;
+  }
+  .logIn{
+    width: 84.5vw;
+  }
 }

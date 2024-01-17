@@ -69,7 +69,7 @@ export default function Header() {
         <div className="h-24 flex justify-between items-center container">
           <button
             onClick={() => {
-              window.location.reload();
+              window.location.href = "/";
             }}
           >
             <div className="flex space-x-1 items-center ">
