@@ -1,0 +1,18 @@
+.main{
+    width: 980px;
+    margin-top: 30px;
+    height: 248px;
+}
+.main h3{
+    font-size: 18px;
+    color: black;
+    margin-bottom: 10px;
+}
+.main ul{
+    margin-bottom: 1.5em;
+}
+.main li{
+    color: #636363;
+    font-size: 14px;
+    line-height: 24px;
+}

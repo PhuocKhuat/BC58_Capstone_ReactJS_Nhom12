@@ -21,6 +21,9 @@
   font-size: larger !important;
   margin-top: 25px !important;
 }
+.formLogin{
+  width: 523px;
+}
 .logIn:hover p {
   color: #562921;
 }
@@ -231,7 +234,10 @@
   .login-form {
     width: 92.5vw !important;
   }
-  .logIn {
+  .formLogin {
+    width: 94vw;
+  }
+  .logIn{
     width: 84.5vw;
   }
   .loginSlick {

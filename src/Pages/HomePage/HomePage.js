@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "./style.css";
 import MultipleSlick from '../MovieList/MultipleSlick';
 import TabMovie from './TabMovie/TabMovie';
 import Carousel from './Carousel/MyCarousel';
 
 export default function HomePage() {
+  useEffect(()=>{
+    window.scrollTo(0,0);
+  })
   return (
     <div style={{backgroundColor: "#fdfcf0"}}>
       <Carousel/>

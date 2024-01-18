@@ -8,6 +8,8 @@ import "slick-carousel/slick/slick-theme.css";
 import Spinner from "./Components/Spinner/Spinner";
 import Footer from "./Components/Footer/Footer";
 import DetailPage from "./Pages/DetailPage/DetailPage";
+import NotFoundPage from "./Pages/NotFoundPage/NotFoundPage";
+// import FormLogin from "./Pages/LoginPage/FormLogin";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage/>}/>
           <Route path="/login" element={<LoginPage />} />
+          <Route path="*" element={<NotFoundPage/>} />
+          {/* <Route path="/account" element={<FormLogin/>} /> */}
           <Route path="/detail/:idPhim" element={<DetailPage />} />
         </Routes>
       <Footer/>
