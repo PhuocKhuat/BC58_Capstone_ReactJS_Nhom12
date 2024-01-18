@@ -2,13 +2,26 @@
     width: 65% !important;
     margin: 0 auto;
 }
+.titleMovie h1 {
+    color: #717171;
+    font-size: 48px;
+    font-weight: bold;
+    text-shadow: 2px 2px 2px #b9b9b9;
+    padding-left: 350px;
+}
 .cinemaSystem{
     position: relative;
     top: 14px;
     @apply ms-28 pt-6 pb-16 md:ms-0 lg:ms-48
 }
-.titleMovieList{
-    @apply ms-0 md:ms-80 lg:ms-96
+.moveSelection{
+    @apply ms-28 pt-6 pb-4 md:ms-0 lg:ms-48
+}
+.titleMovie{
+    position: relative;
+}
+.titleMovie h1{
+    position: absolute;
 }
 
 @media screen and (max-width: 1286px) {
@@ -26,6 +39,14 @@
     }
     .slick-next:before{
         opacity: 0 !important;
+    }
+    .titleMovie{
+        padding-left: -100px;
+    }
+}
+@media screen and (max-width: 812px) {
+    .titleMovie h1{
+        left: -160px;
     }
 }
 @media screen and (max-width: 768px) {
@@ -46,4 +67,31 @@
         bottom: 190px;
         z-index: 100 !important;
     }
+    .titleMovie h1{
+        font-size: 36px !important;
+        left: -260px;
+    }
 }
+@media screen and (max-width: 495px) {
+    .titleMovie h1 {
+      width: 656px;
+      left: -421px;
+      font-size: 32px !important;
+    }
+  }
+  /* @media screen and (max-width: 420px) {
+      .titleTabMovie h1 {
+          font-size: 28px;
+          text-align: left;
+      }
+  } */
+  @media screen and (max-width: 415px) {
+    .titleMovie h1 {
+      left: -422px;
+    }
+  }
+  @media screen and (max-width: 362px) {
+    .titleMovie h1 {
+      left: -435px;
+    }
+  }

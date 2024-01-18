@@ -48,22 +48,22 @@ export default function LoginSlick() {
         <div className="cTKMai">
           <img className="img1" alt="vePhim" src="/img/vePhimVang.png" />
           <div className="khuyenMaiVe">
-          <h3 className="chuongTrinh">Chương trình khuyến mãi</h3>
-          <p>Nhiều chương trình hấp dẫn dành riêng cho CyberMovie</p>
+          <h3 className="chuongTrinh">Promotions</h3>
+          <p>Many attractive programs exclusively for CyberMovie</p>
           </div>
         </div>
-        <div className="cTKMai">
+        <div className="cTKMai cTKMai2">
           <img className="img2" alt="vePhim" src="/img/comBoBapVaVePhim.png" />
           <div className="khuyenMaiBap">
-          <h3 className="chuongTrinh">Chương trình cặp đôi</h3>
-          <p className="moTa">Khi một cặp đôi đi xem phim cùng nhau sẽ được miễn phí bắp</p>
+          <h3 className="chuongTrinh chuongTrinh2">Couple program</h3>
+          <p className="moTa">Couples who go to the movies together get free corn</p>
           </div>
         </div>
-        <div className="cTKMai">
+        <div className="cTKMai cTKMai3">
           <img className="img3" alt="vePhim" src="/img/xu.png" />
           <div className="khuyenMaiXu">
-          <h3 className="chuongTrinh">Chương trình tích điểm</h3>
-          <p>1 điểm = 1.000 VND dành cho tất cả các rạp trên toàn quốc</p>
+          <h3 className="chuongTrinh chuongTrinh3">Point accumulation program</h3>
+          <p>1 point = 1,000 VND for all theaters nationwide</p>
           </div>
         </div>
       </Slider>

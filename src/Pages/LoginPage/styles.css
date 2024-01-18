@@ -111,12 +111,12 @@ label {
   bottom: 58px;
 }
 .khuyenMaiBap {
-  margin-left: 37px;
+  margin-left: 56px;
   width: 85%;
 }
 .khuyenMaiXu {
   margin-top: 24px;
-  margin-left: 23px;
+  margin-left: 68px;
 }
 .chuongTrinh {
   text-align: center;
@@ -126,7 +126,7 @@ label {
 }
 .cTKMai p {
   text-align: center;
-  width: 95%;
+  width: 80%;
   font-size: 16px;
 }
 .cTKMai .moTa {
@@ -137,6 +137,8 @@ label {
 }
 .slicks {
   @apply hidden sm:block;
+}
+.cTKMai2 {
 }
 /* Responsive */
 @media screen and (max-width: 1188px) {
@@ -224,22 +226,78 @@ label {
     width: 84.5vw;
   }
   .loginSlick {
-    width: 60%;
+    width: 83%;
+    margin-left: 107px;
   }
   .khuyenMaiVe {
-    padding-left: 8px !important;
+    left: -47px;
+    bottom: 181px;
   }
   .khuyenMaiBap {
     padding-left: 12px;
+    right: 73px;
+    position: relative;
+    bottom: 60px;
   }
   .khuyenMaiXu {
     padding-left: 12px;
+    bottom: -15px;
+    position: relative;
+    right: 62px;
   }
   .loginSlick .slick-next:before {
     right: 82px !important;
   }
   .loginSlick .slick-prev:before {
     right: 55px !important;
+  }
+  .cTKMai {
+    margin-left: 76px;
+  }
+  .cTKMai2 {
+    padding-left: 9px;
+  }
+  .img1 {
+    width: 514px;
+    height: 627px;
+    top: -109px;
+    right: 100px;
+    padding-right: 140px !important;
+  }
+  .img2 {
+    width: 416px;
+    height: 500px;
+    top: -2px;
+    right: 92px;
+  }
+  .img3 {
+    top: 33px;
+    position: relative;
+    right: 70px;
+    width: 439px;
+    height: 422px;
+  }
+  .chuongTrinh {
+    padding-right: 56px;
+    font-size: 24px !important;
+    text-align: left;
+    left: 100px;
+    position: relative;
+  }
+  .loginSlick .slick-list {
+    margin-left: 58px !important;
+    height: 712px;
+  }
+  .cTKMai p {
+    font-size: 22px;
+  }
+  .chuongTrinh2 {
+    position: relative;
+    left: 45px;
+  }
+  .chuongTrinh3{
+    position: relative;
+    left: -43px;
   }
 }
 @media screen and (max-width: 576px) {
@@ -257,11 +315,16 @@ label {
   .dangNhap {
     padding: 17px 47vw;
   }
-  .dangNhapSpan{
+  .dangNhapSpan {
     position: relative;
     right: 180px;
   }
   .forgotPass {
     left: 60vw !important;
+  }
+}
+@media screen and (max-width: 576px) {
+  .dangNhapSpan {
+    right: 163px;
   }
 }

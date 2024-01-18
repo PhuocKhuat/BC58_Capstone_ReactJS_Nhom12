@@ -8,11 +8,11 @@ export default function HomePage() {
   return (
     <div style={{backgroundColor: "#fdfcf0"}}>
       <Carousel/>
-      <div className="ms-96 titleMovieList">
-        <h1 className="ms-48 pb-9" style={{position: "relative", top: "22px"}}>MOVIE SELECTION</h1>
+      <div className="titleMovie titleMList">
+        <h1 className="moveSelection">MOVIE SELECTION</h1>
       </div>
       <MultipleSlick/>
-      <div className="titleMovieList">
+      <div className="titleMovie titleTabMovie">
         <h1 className="cinemaSystem">CINEMA SYSTEM</h1>
       </div>
       <TabMovie/>

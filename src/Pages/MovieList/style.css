@@ -46,8 +46,14 @@
   font-weight: 600;
   background-color: #d6b13d;
 }
-
+.slick-list{
+  margin-top: 112px;
+}
+/* @apply ms-28 pt-6 pb-16 md:ms-0 lg:ms-48 */
 /* RESPONSIVE */
+@media screen and (max-width: 1040px) {
+   
+}
 @media screen and (max-width: 768px) {
   .slider {
     width: 92%;
