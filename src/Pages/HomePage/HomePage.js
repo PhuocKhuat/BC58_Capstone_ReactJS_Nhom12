@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import "./style.css";
 import MultipleSlick from '../MovieList/MultipleSlick';
-import TabMovie from './TabMovie/TabMovie';
+import TabMovie from './tabMovie/TabMovie';
 import Carousel from './Carousel/MyCarousel';
 
 export default function HomePage() {
