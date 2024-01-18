@@ -29,6 +29,7 @@ function PrevArrow(props) {
 }
 export default function MultipleSlick() {
   let { movieList } = useSelector((state) => state.movieSlice);
+  console.log("🚀 ~ MultipleSlick ~ movieList:", movieList)
   // console.log("🚀 ~ file: MultipleSlick.js:35 ~ MultipleSlick ~ isHovering:", isHovering)
   let dispatch = useDispatch();
   useEffect(() => {

@@ -71,7 +71,7 @@ export default function Header() {
                 />
               </svg>
               <p className="nameLogo">
-                CYBERMOVIE
+                CYBER MOVIE
               </p>
             </div>
           </button>

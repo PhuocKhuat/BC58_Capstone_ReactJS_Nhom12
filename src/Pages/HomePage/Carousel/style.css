@@ -1,21 +1,97 @@
-.container{
-    width: 65%;
-    margin: 0 auto;
+.container {
+  width: 65%;
+  margin: 0 auto;
 }
-.slick-dots li button:before{
-    display: none;
+.slick-dots li button:before {
+  display: none;
 }
-.banner{
-    margin-top: 16px !important;
+.banner {
+  margin-top: 16px !important;
 }
-:where(.css-dev-only-do-not-override-gzal6t).ant-carousel .slick-dots li button {
-    width: 15px;
-    height: 15px;
-    line-height: 15px;
-    border-radius: 50%;
-    bottom: 20px;
-    background-color: #fdfcf0;
+:where(.css-dev-only-do-not-override-gzal6t).ant-carousel
+  .slick-dots
+  li
+  button {
+  width: 15px;
+  height: 15px;
+  line-height: 15px;
+  border-radius: 50%;
+  bottom: 20px;
+  background-color: #fdfcf0;
 }
-:where(.css-dev-only-do-not-override-gzal6t).ant-carousel .slick-dots li.slick-active button {
-    background-color: #d7b440;
+:where(.css-dev-only-do-not-override-gzal6t).ant-carousel
+  .slick-dots
+  li.slick-active
+  button {
+  background-color: #d7b440;
+}
+@media screen and (max-width: 1000px) {
+  .carousel {
+    width: 74vw !important;
+  }
+  :where(.css-dev-only-do-not-override-gzal6t).ant-carousel .slick-dots-bottom {
+    left: 120px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .carousel .slick-list{
+    margin-left: 0;
+  }
+  .carousel {
+    width: 81vw !important;
+  }
+  :where(.css-dev-only-do-not-override-gzal6t).ant-carousel .slick-dots-bottom {
+    left: 66px;
+  }
+}
+@media screen and (max-width: 768px) {
+    .carousel {
+      width: 80vw !important;
+    }
+    .imgCarousel{
+        height: 45vh !important;
+    }
+    :where(.css-dev-only-do-not-override-gzal6t).ant-carousel .slick-dots-bottom{
+        bottom: 9px;
+    }
+    .carousel .slick-tract{
+        height: 355px;
+    }
+
+}
+@media screen and (max-width: 640px) {
+    .imgCarousel{
+        height: 37vh !important;
+    }
+}
+@media screen and (max-width: 508px) {
+    .imgCarousel{
+        height: 33vh !important;
+    }
+}
+@media screen and (max-width: 500px) {
+    .imgCarousel{
+        height: 31vh !important;
+    }
+}
+@media screen and (max-width: 481px) {
+    .imgCarousel{
+        height: 29vh !important;
+    }
+    .carousel {
+        width: 79vw !important;
+    }
+}
+@media screen and (max-width: 430px) {
+    .imgCarousel{
+        height: 27vh !important;
+    }
+}
+@media screen and (max-width: 398px) {
+    .imgCarousel{
+        height: 24vh !important;
+    }
+    .carousel {
+        width: 78vw !important;
+    }
 }

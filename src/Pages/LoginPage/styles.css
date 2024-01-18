@@ -16,8 +16,7 @@
 #components-form-demo-normal-login .login-form-button {
   width: 100%;
 }
-
-label {
+.formLogin label {
   margin-left: 28px !important;
   font-size: larger !important;
   margin-top: 25px !important;
@@ -86,6 +85,11 @@ label {
   height: 340px;
   margin-left: 33px;
   margin-top: 15px;
+}
+.loginSlick .slick-next:before,
+.slick-prev:before {
+  color: #d6b13d !important;
+  font-size: 2rem !important;
 }
 .loginSlick .slick-list {
   height: 522px;
@@ -198,13 +202,15 @@ label {
     opacity: 1 !important;
   }
   .cTKMai p {
-    width: 60% !important;
+    width: 70% !important;
   }
   .chuongTrinh {
     padding-right: 140px;
   }
   .khuyenMaiXu {
     margin-top: 84px;
+    position: relative;
+    right: 49px;
   }
   .khuyenMaiBap {
     margin-top: 116px;
@@ -213,6 +219,9 @@ label {
   .khuyenMaiVe {
     bottom: -51px;
     left: 20px;
+  }
+  .chuongTrinh3{
+    width: 93%;
   }
 }
 @media screen and (max-width: 768px) {
@@ -247,9 +256,11 @@ label {
   }
   .loginSlick .slick-next:before {
     right: 82px !important;
+    top: 15px;
   }
   .loginSlick .slick-prev:before {
     right: 55px !important;
+    top: 15px;
   }
   .cTKMai {
     margin-left: 76px;

@@ -15,7 +15,7 @@
     /* padding: 20px 0; */
     @apply py-0 sm:py-5 
 }
-h3{
+.policy h3{
     font-weight: bold;
     font-size: 14px;
     color: #636363;
@@ -54,6 +54,11 @@ hr{
     sm:relative sm:left-10 sm:mt-0 
     md:left-24 
     lg:relative lg:left-2 lg:bg-transparent lg:w-full lg:text-left 
+}
+@media screen and (max-width: 512px) {
+    .customer{
+        left: 1rem !important;
+    }    
 }
 @media screen and (max-width: 480px) {
     .customer{

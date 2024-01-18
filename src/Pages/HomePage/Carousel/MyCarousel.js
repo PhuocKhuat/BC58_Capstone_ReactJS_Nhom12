@@ -39,8 +39,10 @@ const MyCarousel = () => {
           <h3
             style={{
               ...contentStyle,
-              backgroundImage: `url(${banner.hinhAnh})`, objectFit: "cover"
+              backgroundImage: `url(${banner.hinhAnh})`,
+              objectFit: "cover"
             }}
+            className="imgCarousel"
           >
             <img alt="" className="w-full opacity-0" src={banner.hinhAnh} />
           </h3>
@@ -50,7 +52,7 @@ const MyCarousel = () => {
   };
 
   return (
-    <Carousel autoplay className="container">
+    <Carousel autoplay className="container carousel">
       {renderBanner()}
     </Carousel>
   );
