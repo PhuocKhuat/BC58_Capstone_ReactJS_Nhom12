@@ -45,7 +45,7 @@ export default function LoginSlick() {
   return (
     <div className="slicks">
       <Slider {...settings} className="loginSlick">
-        <div className="cTKMai">
+        <div className="cTKMai cTKMai1">
           <img className="img1" alt="vePhim" src="/img/vePhimVang.png" />
           <div className="khuyenMaiVe">
           <h3 className="chuongTrinh">Promotions</h3>

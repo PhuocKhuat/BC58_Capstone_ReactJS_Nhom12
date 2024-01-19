@@ -31,17 +31,17 @@ export const FormLogin = () => {
   };
 
   return (
-    <div className="formLogin">
+    <div className="formLogin container">
       <div>
-        <h2 className="pt-5 ps-10 font-semibold text-white dangNhap">
-          <NavLink className="dangNhapSpan">LOGIN</NavLink>
-          <NavLink to="/" className="dangNhapSpan">
+        <h2 className="pt-5 ps-10 font-semibold text-white dangNhap" >
+          <NavLink to="/account" className="dangNhapSpan">LOGIN</NavLink>
+          <NavLink to="/signup" className="dangNhapSpan">
             SIGNUP
           </NavLink>
         </h2>
         <Form
           name="normal_login"
-          className="login-form"
+          className="login-form formDNhap"
           layout="vertical"
           wrapperCol={{
             offset: 1,
@@ -57,7 +57,7 @@ export const FormLogin = () => {
           <Form.Item
             label="Username"
             name="taiKhoan"
-            className="formUser"
+            className="p-1"
             rules={[
               {
                 required: true,
@@ -124,9 +124,9 @@ export const FormLogin = () => {
             </Button>
             <p style={{ position: "absolute", bottom: "45px", left: "40%" }}>
               Or{" "}
-              <a href="" className="text-blue-400 ">
+              <NavLink to='/signup' className="text-blue-400 ">
                 register now!
-              </a>
+              </NavLink>
             </p>
           </Form.Item>
         </Form>

@@ -28,7 +28,7 @@
   color: #562921;
 }
 .logIn {
-  padding: 20px 240px;
+  padding: 20px 281px;
   background-color: #dab846;
 }
 .remember {
@@ -48,7 +48,7 @@
 .formLogin {
   @apply mt-24 mb-10 sm:ms-5 md:ms-0;
 }
-.login-form {
+.formDNhap {
   width: 524px !important;
 }
 .loginSlick .slick-next:before,
@@ -63,12 +63,43 @@
   position: relative;
   right: 7px;
 }
+.formDNhap{
+  margin-top: 95px;
+  width: 613px !important;
+}
+/* FormSignUp */
+.formDKy{
+  margin-top: 93px;
+  width: 612px !important;
+  height: 87vh;
+  width: 70%;
+}
+.formSignup label{
+  margin-left: 28px !important;
+  font-size: larger !important;
+}
+.formSignup :where(.css-dev-only-do-not-override-gzal6t).ant-form-item .ant-form-item-label >label {
+  display: inline !important;
+}
+.truongDuLieu{
+  padding: 4px;
+}
+.formSignup :where(.css-dev-only-do-not-override-gzal6t).ant-btn{
+  padding: 20px 281px !important;
+  background-color: #dab846 !important;
+  color: white;
+}
+.textSignup{
+  position: absolute;
+  bottom: 5px;
+  left: 40%;
+}
 
 /* LoginSlick */
 .loginSlick {
   margin-left: 70px;
   margin-top: 40px;
-  width: 90%;
+  width: 28vw;
   background-color: white;
 }
 .img2 {
@@ -148,18 +179,46 @@
 .cTKMai2 {
 }
 /* Responsive */
+@media screen and (max-width: 1286px) {
+   .loginSlick{
+    width: 33vw;
+    margin-left: 116px;
+   }
+}
 @media screen and (max-width: 1188px) {
   .loginPage {
     margin: 0 !important;
   }
   .loginSlick {
-    margin-left: 162px;
+    margin-left: 152px;
   }
   .img1 {
     padding-right: 18px;
   }
   .khuyenMaiVe {
     bottom: 41px;
+  }
+}
+@media screen and (max-width: 1140px) {
+  .loginSlick{
+    width: 31vw;
+  }
+  .cTKMai1{
+    position: relative;
+    right: 42px;
+  }
+  .cTKMai2{
+    position: relative;
+    right: 36px;
+  }
+  .cTKMai3{
+    position: relative;
+    right: 37px;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .loginSlick {
+    margin-left: 162px;
   }
 }
 @media screen and (max-width: 1064px) {

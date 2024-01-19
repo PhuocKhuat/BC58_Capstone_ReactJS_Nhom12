@@ -9,6 +9,8 @@ import Spinner from "./Components/Spinner/Spinner";
 import Footer from "./Components/Footer/Footer";
 import DetailPage from "./Pages/DetailPage/DetailPage";
 import NotFoundPage from "./Pages/NotFoundPage/NotFoundPage";
+import FormLogin from "./Pages/LoginPage/FormLogin";
+import FormSignup from "./Pages/LoginPage/FormSignup";
 // import FormLogin from "./Pages/LoginPage/FormLogin";
 
 function App() {
@@ -20,9 +22,10 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage/>}/>
           <Route path="/login" element={<LoginPage />} />
-          <Route path="*" element={<NotFoundPage/>} />
-          {/* <Route path="/account" element={<FormLogin/>} /> */}
+          <Route path="/account" element={<FormLogin/>} />
+          <Route path="/signup" element={<FormSignup/>} />
           <Route path="/detail/:idPhim" element={<DetailPage />} />
+          <Route path="*" element={<NotFoundPage/>} />
         </Routes>
       <Footer/>
       </BrowserRouter>
