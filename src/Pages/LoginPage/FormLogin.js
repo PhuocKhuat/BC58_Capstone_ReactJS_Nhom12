@@ -7,7 +7,6 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setUser } from "../../Redux/movieSlice";
 import LoginSlick from "./LoginSlick";
-import './styles.css'
 
 export const FormLogin = () => {
   let navigate = useNavigate();
@@ -133,7 +132,7 @@ export const FormLogin = () => {
           </Form.Item>
         </Form>
       </div>
-      <LoginSlick/>
+      {/* <LoginSlick/> */}
     </div>
   );
 };
