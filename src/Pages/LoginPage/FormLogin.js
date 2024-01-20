@@ -6,6 +6,8 @@ import { https } from "../../Service/api";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setUser } from "../../Redux/movieSlice";
+import LoginSlick from "./LoginSlick";
+import './styles.css'
 
 export const FormLogin = () => {
   let navigate = useNavigate();
@@ -31,7 +33,7 @@ export const FormLogin = () => {
   };
 
   return (
-    <div className="formLogin container">
+    <div className="formLogin LoginPage container">
       <div>
         <h2 className="pt-5 ps-10 font-semibold text-white dangNhap" >
           <NavLink to="/account" className="dangNhapSpan">LOGIN</NavLink>
@@ -131,6 +133,7 @@ export const FormLogin = () => {
           </Form.Item>
         </Form>
       </div>
+      <LoginSlick/>
     </div>
   );
 };

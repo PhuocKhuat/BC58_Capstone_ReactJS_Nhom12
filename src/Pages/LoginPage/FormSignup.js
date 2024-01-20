@@ -26,7 +26,7 @@ export const FormSignup = () => {
   return (
     <div className="formSignup container" style={{ height: "730px" }}>
       <div>
-        <h2 className="pt-5 ps-10 font-semibold text-white dangNhap">
+        <h2 className="pt-5 ps-10 font-semibold text-white dangNhap dangKy">
           <NavLink to="/account" className="dangNhapSpan">
             LOGIN
           </NavLink>

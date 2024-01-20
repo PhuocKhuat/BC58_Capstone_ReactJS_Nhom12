@@ -49,7 +49,7 @@ export default function Header() {
         className="shadow shadow-black"
         style={{ backgroundColor: "#1f2022" }}
       >
-        <div className="h-24 flex justify-between items-center container">
+        <div className="h-24 flex justify-between items-center container header">
           <button
             onClick={() => {
               window.location.href = "/";

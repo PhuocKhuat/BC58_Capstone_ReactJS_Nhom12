@@ -1,5 +1,5 @@
 .container {
-  width: 65% !important;
+  width: 65%;
   margin: 0 auto;
 }
 .titleMovie h1 {
@@ -26,12 +26,12 @@
 
 @media screen and (max-width: 1286px) {
   .container {
-    width: 80% !important;
+    width: 80%;
   }
 }
 @media screen and (max-width: 1000px) {
   .container {
-    width: 95% !important;
+    width: 95%;
     margin: 0 !important;
   }
   .slick-list {

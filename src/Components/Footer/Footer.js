@@ -27,7 +27,7 @@ export default function Footer() {
 
   return (
     <div className="footer">
-      <div className="container footerDesktop mt-8">
+      <div className="container footerDesktop mt-8" style={{width: "80vw"}}>
         <div className="footerPolicy grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4">
           <div className="policy">
             <h3>CyberMovie</h3>
