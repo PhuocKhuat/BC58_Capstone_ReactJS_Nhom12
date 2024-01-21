@@ -46,8 +46,10 @@
 }
 /* @apply ms-28 pt-6 pb-16 md:ms-0 lg:ms-48 */
 /* RESPONSIVE */
-@media screen and (max-width: 1040px) {
-   
+@media screen and (max-width: 1000px) {
+   .slider{
+    width: 117.5%;
+   }
 }
 @media screen and (max-width: 768px) {
   .slider {

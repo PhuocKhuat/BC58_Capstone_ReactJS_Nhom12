@@ -3,7 +3,7 @@ import "./App.css";
 import LoginPage from "./Pages/LoginPage/LoginPage";
 import HomePage from "./Pages/HomePage/HomePage";
 import Header from "./Components/Header/Header";
-import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Spinner from "./Components/Spinner/Spinner";
 import Footer from "./Components/Footer/Footer";
@@ -11,23 +11,26 @@ import DetailPage from "./Pages/DetailPage/DetailPage";
 import NotFoundPage from "./Pages/NotFoundPage/NotFoundPage";
 import FormLogin from "./Pages/LoginPage/FormLogin";
 import FormSignup from "./Pages/LoginPage/FormSignup";
+import Layout from "./Layouts/Layout";
 // import FormLogin from "./Pages/LoginPage/FormLogin";
 
 function App() {
   return (
     <>
-      <Spinner/>
+      <Spinner />
       <BrowserRouter>
-      <Header/>
+        <Header />
         <Routes>
-          <Route path="/" element={<HomePage/>}/>
+          <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/account" element={<FormLogin/>} />
-          <Route path="/signup" element={<FormSignup/>} />
+          <Route path="/" element={<Layout />}>
+            <Route path="/account" element={<FormLogin />} />
+            <Route path="/signup" element={<FormSignup />} />
+          </Route>
           <Route path="/detail/:idPhim" element={<DetailPage />} />
-          <Route path="*" element={<NotFoundPage/>} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
-      <Footer/>
+        <Footer />
       </BrowserRouter>
     </>
   );

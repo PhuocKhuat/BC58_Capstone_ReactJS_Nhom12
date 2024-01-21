@@ -6,7 +6,6 @@ import { https } from "../../Service/api";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setUser } from "../../Redux/movieSlice";
-import LoginSlick from "./LoginSlick";
 
 export const FormLogin = () => {
   let navigate = useNavigate();
@@ -30,7 +29,6 @@ export const FormLogin = () => {
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
   };
-
   return (
     <div className="formLogin LoginPage container">
       <div>
@@ -58,7 +56,7 @@ export const FormLogin = () => {
           <Form.Item
             label="Username"
             name="taiKhoan"
-            className="p-1"
+            className="p-1 taiKhoan"
             rules={[
               {
                 required: true,
@@ -73,7 +71,7 @@ export const FormLogin = () => {
           </Form.Item>
           <Form.Item
             label="Password"
-            className="formUser"
+            className="formUser matKhau"
             name="matKhau"
             rules={[
               {
@@ -132,7 +130,6 @@ export const FormLogin = () => {
           </Form.Item>
         </Form>
       </div>
-      {/* <LoginSlick/> */}
     </div>
   );
 };

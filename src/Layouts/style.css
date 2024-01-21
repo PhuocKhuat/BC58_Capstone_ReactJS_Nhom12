@@ -1,0 +1,160 @@
+.layout{
+    @apply grid sm:grid-cols-1 md:grid-cols-2
+}
+.layout .formLogin{
+    position: relative;
+    right: 78px;
+}
+.layoutDNhap .dangNhap{
+    top: 41px;
+}
+.layout .formSignup{
+    position: relative;
+    right: 83px;
+}
+.layoutDKy .dangKy{
+    top: -55px;
+    width: 34vw;
+}
+.layoutDKy .formDKy{
+    width: 521px !important;
+}
+.layout .loginSlick{
+    @apply hidden sm:block
+}
+.layout .taiKhoan, .layout .matKhau{
+    width: 482px;
+}
+.truongDuLieu{
+    width: 521px !important;   
+}
+.layout .formSignup{
+    height: 809px !important;
+}
+.layout .formDKy{
+    height: 98vh;
+}
+.layout .formSignup :where(.css-dev-only-do-not-override-gzal6t).ant-btn {
+    padding: 20px 237px !important;
+}
+/* Responsive */
+@media screen and (max-width: 1286px) {
+    .layoutDNhap .slicks{
+        margin-left: -40px !important;
+    }
+    .layout .formLogin, .layout .formSignup{
+        right: 160px;
+    }
+    .layoutDKy .formDKy{
+        width: 447px !important;
+    }
+    .truongDuLieu{
+        width: 447px !important;   
+    }
+    .layout .formSignup :where(.css-dev-only-do-not-override-gzal6t).ant-btn {
+        padding: 20px 203px !important;
+    }
+}
+@media screen and (max-width: 1160px) {
+    .layoutDNhap .slicks{
+        margin-left: -104px !important;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .layout .formLogin{
+        right: -20px;
+    }
+    .layoutDNhap .slicks{
+        margin-left: 104px !important;
+    }
+    .layout .formSignup{
+        right: -22px;
+    }
+}
+@media screen and (max-width: 910px) {
+    .layout .formLogin{
+        right: 0px;
+    }
+    .layoutDNhap .slicks{
+        margin-left: 12vw !important;
+    }
+}
+@media screen and (max-width: 855px) {
+    .layoutDNhap .slicks {
+        margin-left: 7vw !important;
+    }
+    .layoutDKy .chuongTrinh3 {
+        width: 99%;
+    }
+    .layoutDKy .chuongTrinh {
+        padding-right: 119px;
+    }
+}
+@media screen and (max-width: 820px) {
+    .layoutDNhap .slicks {
+        margin-left: 10vw !important;
+    }
+}
+@media screen and (max-width: 768px) {
+    .layout .loginSlick{
+        width: 92vw;
+        margin-left: -107px;
+    }
+    .layout .formLogin{
+        right: -17px;
+    }
+    .layout .taiKhoan, .layout .matKhau {
+        width: 85vw;
+    }
+    .truongDuLieu{
+        width: 87vw !important;
+    }
+    .layoutDKy .formDKy{
+        width: 93vw !important;
+    }
+    .layout .formSignup{
+        height: 809px;
+    }
+    .layout .formDKy{
+        height: 98vh;
+        overflow: hidden;
+    }
+    .layoutDNhap .slicks {
+        margin-left: 17vw !important;
+    }
+    .layout .formSignup :where(.css-dev-only-do-not-override-gzal6t).ant-btn {
+        padding: 20px 42vw !important;
+    }
+}
+@media screen and (max-width: 576px) {
+    .layout .taiKhoan, .layout .matKhau {
+        width: 30vw !important;
+    }
+    .layout .dangNhap{
+        padding: 17px 46vw;
+    }
+}
+@media screen and (max-width: 550px) {
+    .layout .formSignup {
+        right: -10px;
+    }
+}
+@media screen and (max-width: 455px) {
+    .layout .formDNhap{
+        width: 89.5vw;
+    }
+    .layout .dangNhap{
+        padding: 17px 45vw;
+    }
+    .logIn {
+        padding: 20px 41vw;
+    }
+    .forgotPass {
+        left: 54vw !important;
+    }
+}
+@media screen and (max-width: 337px) {
+    .dangNhapSpan {
+        right: 138px;
+    }
+}
