@@ -21,7 +21,7 @@
   padding-bottom: 15px;
   color: black;
 }
-.nameMovie {
+.nameMovies {
   font-size: 28px;
   font-style: normal;
   line-height: 1.2;
@@ -33,45 +33,58 @@
   display: block;
   font-size: 14px;
 }
-
+.khungGioChieu {
+  color: #d6b13d;
+  border: 1px solid #e4e4e4;
+  cursor: pointer;
+  margin: 10px 6px 16px 8px;
+  padding: 6px;
+  border-radius: 4px;
+  text-decoration: none;
+  background-color: rgba(246, 246, 246, 0.5);
+  font-size: 14px;
+}
+.tabCol3{
+  width: 88%;
+}
 /* Responsive */
 @media screen and (max-width: 768px) {
-    .imgDetail {
-        width: 89vw !important;
-        height: 28vw;
-    }
+  .imgDetail {
+    width: 89vw !important;
+    height: 28vw;
+  }
 }
 @media screen and (max-width: 560px) {
-    .infoPhim{
-        display: block;
-    }
-    .tenPhim{
-        font-size: 18px !important;
-        margin-top: 10px;
-    }
-    .nameMovie{
-        margin-top: 4px;
-        margin-bottom: 8px;
-    }
-    .movieContent{
-        display: none;
-    }
-    .imgDetail {
-        width: 37vw !important;
-        height: 56vw;
-        margin-left: 133px;
-        margin-bottom: 26px;
-    }
-    .borderName{
-        padding-bottom: 0;
-    }
-    .muaVe{
-        display: flex;
-        justify-content: center;
-    }
+  .infoPhim {
+    display: block;
+  }
+  .tenPhim {
+    font-size: 18px !important;
+    margin-top: 10px;
+  }
+  .nameMovie {
+    margin-top: 4px;
+    margin-bottom: 8px;
+  }
+  .movieContent {
+    display: none;
+  }
+  .imgDetail {
+    width: 37vw !important;
+    height: 56vw;
+    margin-left: 133px;
+    margin-bottom: 26px;
+  }
+  .borderName {
+    padding-bottom: 0;
+  }
+  .muaVe {
+    display: flex;
+    justify-content: center;
+  }
 }
 @media screen and (max-width: 440px) {
-    .imgDetail{
-        margin-left: 102px;
-    }
+  .imgDetail {
+    margin-left: 102px;
+  }
 }

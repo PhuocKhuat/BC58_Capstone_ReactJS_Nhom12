@@ -12,6 +12,8 @@ import NotFoundPage from "./Pages/NotFoundPage/NotFoundPage";
 import FormLogin from "./Pages/LoginPage/FormLogin";
 import FormSignup from "./Pages/LoginPage/FormSignup";
 import Layout from "./Layouts/Layout";
+import BookingMovie from "./Pages/BookingMovie/BookingMovie";
+import PrivateLayout from "./Layouts/PrivateLayout";
 // import FormLogin from "./Pages/LoginPage/FormLogin";
 
 function App() {
@@ -28,6 +30,14 @@ function App() {
             <Route path="/signup" element={<FormSignup />} />
           </Route>
           <Route path="/detail/:idPhim" element={<DetailPage />} />
+          <Route
+            path="/booking"
+            element={
+              <PrivateLayout>
+                <BookingMovie />
+              </PrivateLayout>
+            }
+          />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
         <Footer />

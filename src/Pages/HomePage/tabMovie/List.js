@@ -1,5 +1,6 @@
 import moment from "moment";
 import React, { Fragment } from "react";
+import { NavLink } from "react-router-dom";
 
 export default function List({ dSPhim }) {
   return (
@@ -12,11 +13,11 @@ export default function List({ dSPhim }) {
               <p className="tenPhim">{phim.tenPhim}</p>
               <div className="danhSachGio">
                 {phim.lstLichChieuTheoPhim.map((khungGio, index) => (
-                  <p key={index} className="khungGio hover:border-black duration-200">
+                  <NavLink to="/booking" key={index} className="khungGio hover:border-black duration-200">
                     {moment(khungGio.ngayChieuGioChieu).format(
                       "MMM ddd D - hh:mm A"
                     )}
-                  </p>
+                  </NavLink>
                 ))}
               </div>
             </div>
