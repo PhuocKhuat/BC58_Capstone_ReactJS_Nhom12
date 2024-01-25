@@ -11,6 +11,7 @@ import carouselSlice from './Redux/carouselSlice';
 import footerSlice from './Redux/footerSlice';
 import tapMovieSlice from './Redux/tapMovieSlice';
 import detailSlice from './Redux/detailSlice';
+import bookingSlice from './Redux/bookingSlice';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 export let store = configureStore({
@@ -21,6 +22,7 @@ export let store = configureStore({
     footerSlice,
     tapMovieSlice,
     detailSlice,
+    bookingSlice,
   }
 })
 root.render(

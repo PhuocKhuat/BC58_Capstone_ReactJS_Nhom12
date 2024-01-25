@@ -31,7 +31,7 @@ function App() {
           </Route>
           <Route path="/detail/:idPhim" element={<DetailPage />} />
           <Route
-            path="/booking"
+            path="/booking/:idMa"
             element={
               <PrivateLayout>
                 <BookingMovie />

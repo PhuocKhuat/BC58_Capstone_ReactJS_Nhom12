@@ -1,0 +1,44 @@
+.bookingMovie {
+  height: 100vh;
+}
+.btnBooking {
+  background-color: #c6a63d;
+}
+.btnBooking:hover {
+  border: 1px solid #c6a63d;
+  color: #522722;
+  background-color: #eff0f5;
+}
+.trapezoid {
+  border-bottom: 60px solid #c6a63d;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  opacity: 0.5;
+  height: 0;
+  width: 650px;
+  filter: drop-shadow(1px 36px 38px #000000);
+-webkit-filter: drop-shadow(1px 36px 38px #000000);
+-moz-filter: drop-shadow(1px 36px 38px #000000);
+}
+.manHinh{
+    width: 650px;
+    height: 20px;
+}
+.ghe{
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 15px;
+    background-color: rgb(123, 122, 122);
+}
+.gheDaDat{
+    background-color: rgb(232, 76, 76);
+    cursor: no-drop;
+}
+.gheDangDat{
+    background-color: rgb(18, 176, 18);
+}
+.gheVip{
+    background-color: rgb(228, 74, 8);
+}
