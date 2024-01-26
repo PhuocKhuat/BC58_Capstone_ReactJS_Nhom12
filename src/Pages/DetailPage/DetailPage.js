@@ -3,7 +3,7 @@ import { NavLink, useParams } from "react-router-dom";
 import { https } from "../../Service/api";
 import { useDispatch, useSelector } from "react-redux";
 import { setDetail, settTLChieu } from "../../Redux/detailSlice";
-import "./style.css";
+import "./styleDetail.css";
 import { Rate, Tabs, Tooltip } from "antd";
 import ListGioChieu from "./ListGioChieu";
 

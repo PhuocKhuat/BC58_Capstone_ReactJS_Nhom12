@@ -1,9 +1,11 @@
-import React, { useEffect } from "react";
+import React, { Fragment, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import "./style.css";
 import { https } from "../../Service/api";
 import { useParams } from "react-router-dom";
 import { setTTRap } from "../../Redux/bookingSlice";
+import { CloseOutlined } from "@ant-design/icons"
+import "./styleBooking.css";
+import "../../Common/common.css"
 
 export default function BookingMovie() {
   let { user } = useSelector((state) => state.movieSlice);
@@ -26,7 +28,12 @@ export default function BookingMovie() {
   let { danhSachGhe, thongTinPhim } = thongTinRap;
   const renderGhe = () =>
     danhSachGhe.map((ghe, index) => {
-      return <button key={index} className="ghe">{ghe.stt}</button>;
+      let gheVip = ghe.loaiGhe === "Vip" ? "gheVip" : "";
+      let gheDaDat = ghe.daDat === true ? "gheDaDat" : "";
+      return <Fragment key={index}>
+        <button className={`ghe ${gheVip} ${gheDaDat}`}>{ghe.daDat ? <CloseOutlined/> : ghe.stt }</button>
+        {/* {(index+1) % 10 === 0 ? <br/>: ""} */}
+      </Fragment>;
     });
 
   return (
