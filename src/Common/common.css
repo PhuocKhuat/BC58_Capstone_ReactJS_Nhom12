@@ -17,6 +17,12 @@
     background-color: rgb(232, 76, 76);
     cursor: no-drop;
 }
+.gheDaDat:hover{
+    border: none;
+ }
+.gheDaDat:active{
+    background-color: rgb(232, 76, 76);
+}
 .gheDangDat{
     background-color: rgb(18, 176, 18);
 }

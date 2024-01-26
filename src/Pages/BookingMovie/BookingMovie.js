@@ -31,7 +31,7 @@ export default function BookingMovie() {
       let gheVip = ghe.loaiGhe === "Vip" ? "gheVip" : "";
       let gheDaDat = ghe.daDat === true ? "gheDaDat" : "";
       return <Fragment key={index}>
-        <button className={`ghe ${gheVip} ${gheDaDat}`}>{ghe.daDat ? <CloseOutlined/> : ghe.stt }</button>
+        <button disabled={ghe.daDat} className={`ghe ${gheVip} ${gheDaDat}`}>{ghe.daDat ? <CloseOutlined/> : ghe.stt }</button>
         {/* {(index+1) % 10 === 0 ? <br/>: ""} */}
       </Fragment>;
     });
