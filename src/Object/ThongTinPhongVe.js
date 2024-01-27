@@ -22,5 +22,5 @@ export class ThongTinPhim {
   
 export class ThongTinLichChieu {
   thongTinPhim = new ThongTinPhim();
-  danhSachGhe= [];
+  danhSachGhe = [];
 }

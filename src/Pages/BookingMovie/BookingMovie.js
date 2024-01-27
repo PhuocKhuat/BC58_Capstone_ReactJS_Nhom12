@@ -2,7 +2,7 @@ import React, { Fragment, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { https } from "../../Service/api";
 import { useParams } from "react-router-dom";
-import { setTTRap } from "../../Redux/bookingSlice";
+import { setDSDatGhe, setTTRap } from "../../Redux/bookingSlice";
 import { CloseOutlined } from "@ant-design/icons"
 import "./styleBooking.css";
 import "../../Common/common.css"
@@ -10,7 +10,8 @@ import "../../Common/common.css"
 export default function BookingMovie() {
   let { user } = useSelector((state) => state.movieSlice);
   // console.log("🚀 ~ BookingMovie ~ user:", user);
-  let { thongTinRap } = useSelector((state) => state.bookingSlice);
+  let { thongTinRap, dSDatGhe } = useSelector((state) => state.bookingSlice);
+  // console.log("🚀 ~ BookingMovie ~ datGhe:", datGhe)
   // console.log("🚀 ~ BookingMovie ~ danhSachGhe:", danhSachGhe)
   let { idMa } = useParams();
   let dispatch = useDispatch();
@@ -28,10 +29,15 @@ export default function BookingMovie() {
   let { danhSachGhe, thongTinPhim } = thongTinRap;
   const renderGhe = () =>
     danhSachGhe.map((ghe, index) => {
-      let gheVip = ghe.loaiGhe === "Vip" ? "gheVip" : "";
-      let gheDaDat = ghe.daDat === true ? "gheDaDat" : "";
+      let cSSgheVip = ghe.loaiGhe === "Vip" ? "gheVip" : "";
+      let cSSgheDaDat = ghe.daDat === true ? "gheDaDat" : "";
+      let cSSgheDangDat = "";
+      let indexGhe = dSDatGhe.findIndex(Ghe => Ghe.maGhe === ghe.maGhe);
+      if(indexGhe !== -1){
+        cSSgheDangDat = "gheDangDat"
+      }
       return <Fragment key={index}>
-        <button disabled={ghe.daDat} className={`ghe ${gheVip} ${gheDaDat}`}>{ghe.daDat ? <CloseOutlined/> : ghe.stt }</button>
+        <button disabled={ghe.daDat} className={`ghe ${cSSgheVip} ${cSSgheDaDat} ${cSSgheDangDat}`} onClick={()=>{dispatch(setDSDatGhe(ghe))}}>{ghe.daDat ? <CloseOutlined/> : ghe.stt }</button>
         {/* {(index+1) % 10 === 0 ? <br/>: ""} */}
       </Fragment>;
     });
@@ -61,9 +67,15 @@ export default function BookingMovie() {
           <div className="grid grid-cols-2 my-3 border-b-2 border-gray-200">
             <div className="text-left">
               <span className="text-amber-800 text-lg">Chair: </span>
+              {dSDatGhe.map((gheDangDat,index)=> {
+                return <span key={index}  className="text-green-500 space-x-5">
+                  {gheDangDat.stt},
+                  {(index+1) % 9 === 0 ? <br/> : "" }
+                </span>
+              })}
             </div>
             <div className="text-right mb-3">
-              <span className="text-black">0đ</span>
+              <span className="text-black">{dSDatGhe.reduce((acc, ghe, index) => acc + ghe.giaVe, 0).toLocaleString()} VND</span>
             </div>
           </div>
           <div className="my-3 border-b-2 border-gray-200">
