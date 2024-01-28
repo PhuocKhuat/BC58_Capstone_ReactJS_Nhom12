@@ -26,6 +26,13 @@
 .gheDangDat{
     background-color: rgb(18, 176, 18);
 }
+.gheMinhDat{
+    background-color: rgb(232, 223, 223);
+}
 .gheVip{
     background-color: rgb(228, 74, 8);
+}
+.gheUserKhacDat{
+    background-color: rgb(31, 31, 170);
+    cursor: no-drop;
 }

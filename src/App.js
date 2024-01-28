@@ -15,6 +15,7 @@ import Layout from "./Layouts/Layout";
 import BookingMovie from "./Pages/BookingMovie/BookingMovie";
 import PrivateLayout from "./Layouts/PrivateLayout";
 import TabDatVe from "./Pages/BookingMovie/TabDatVe";
+import ResultBooking from "./Pages/BookingMovie/ResultBooking";
 // import FormLogin from "./Pages/LoginPage/FormLogin";
 
 function App() {

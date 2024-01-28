@@ -5,6 +5,8 @@ const initialState = {
     thongTinRap: new ThongTinLichChieu(),
     dSDatGhe: [],
     resultBooking: null,
+    switchTab: "1",
+    gheUserKhacDat: [{maGhe: 102701}],
 }
 
 const bookingSlice = createSlice({
@@ -29,9 +31,18 @@ const bookingSlice = createSlice({
     setClearDSGhe: (state, action)=>{
       state.dSDatGhe = [];
     },
+    setSwitchTab: (state, action)=>{
+      state.switchTab = "2";
+    },
+    setSwitchBackToTab: (state, action)=>{
+      state.switchTab = action.payload;
+    },
+    setGheUserKhacDat: (state, action)=>{
+      state.gheUserKhacDat = action.payload;
+    },
   }
 });
 
-export const { setTTRap, setDSDatGhe, setResultBooking, setClearDSGhe } = bookingSlice.actions
+export const { setTTRap, setDSDatGhe, setResultBooking, setClearDSGhe, setSwitchTab, setSwitchBackToTab, setGheUserKhacDat } = bookingSlice.actions
 
 export default bookingSlice.reducer
