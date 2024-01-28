@@ -8,7 +8,7 @@ import "./styleBooking.css";
 import "../../Common/common.css";
 import ThongTinDatVe from "../../Object/ThongTinDatVe";
 
-export default function BookingMovie() {
+export default function BookingMovie(props) {
   let { user } = useSelector((state) => state.movieSlice);
   // console.log("🚀 ~ BookingMovie ~ user:", user);
   let { thongTinRap, dSDatGhe } = useSelector((state) => state.bookingSlice);
@@ -27,10 +27,10 @@ export default function BookingMovie() {
         console.log(err);
       });
   }, []);
-  let handleDatVe = (datVe) => {
-    let datVes = datVe;
+  let handleDatVe = (thongTinDatVe = new ThongTinDatVe()) => {
+    // let datVes = datVe;
     https
-      .post("/api/QuanLyDatVe/DatVe", datVes)
+      .post("/api/QuanLyDatVe/DatVe", thongTinDatVe)
       .then((res) => {
         console.log(res);
       })
@@ -65,7 +65,7 @@ export default function BookingMovie() {
     });
 
   return (
-    <div className="container">
+    <div>
       <div className="grid grid-cols-12">
         <div className="col-span-9">
           <div className="mt-5 relative">
@@ -73,10 +73,37 @@ export default function BookingMovie() {
             <div className="trapezoid mt-3 relative top-7 "></div>
             <div className="mt-8 w-11/12">{renderGhe()}</div>
           </div>
+          <div className="mt-5 text-center flex justify-center tables">
+            <table className="w-4/5 divide-y divide-gray-200">
+              <thead className="p-5 bg-gray-50">
+                <tr>
+                  <th>Seats not yet booked</th>
+                  <th>Seats are placed</th>
+                  <th>Seats are being booked</th>
+                </tr>
+              </thead>
+              <tbody className="bg-white divide-y divide-gray-200">
+                <tr>
+                  <td className="ps-16">
+                    <p className="ghe">00</p>
+                  </td>
+                  <td className="ps-12">
+                    <p className="ghe gheDaDat">X</p>
+                  </td>
+                  <td className="ps-20">
+                    <p className="ghe gheDangDat">00</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
         <div className="col-span-3 bg-white mt-5 p-5">
           <h3 className="text-center border-b-2 border-gray-200 text-yellow-400 text-2xl mb-3 mt-3">
-            0đ
+            {dSDatGhe
+              .reduce((acc, ghe, index) => acc + ghe.giaVe, 0)
+              .toLocaleString()}{" "}
+            VND
           </h3>
           <div className="border-b-2 border-gray-200">
             <h3 className="text-xl">{thongTinPhim.tenPhim}</h3>
@@ -96,7 +123,7 @@ export default function BookingMovie() {
               })}
             </div>
             <div className="text-right mb-3">
-              <span className="text-black">
+              <span className="text-black giaVeDaDat">
                 {dSDatGhe
                   .reduce((acc, ghe, index) => acc + ghe.giaVe, 0)
                   .toLocaleString()}{" "}
@@ -119,7 +146,10 @@ export default function BookingMovie() {
                 let thongTinDatVe = new ThongTinDatVe();
                 thongTinDatVe.maLichChieu = idMa;
                 thongTinDatVe.danhSachVe = dSDatGhe;
-                //  console.log("🚀 ~ BookingMovie ~ thongTinDatVe:", thongTinDatVe);
+                console.log(
+                  "🚀 ~ BookingMovie ~ thongTinDatVe:",
+                  thongTinDatVe
+                );
                 handleDatVe(thongTinDatVe);
               }}
             >

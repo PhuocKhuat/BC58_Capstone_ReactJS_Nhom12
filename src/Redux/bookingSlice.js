@@ -20,6 +20,7 @@ const bookingSlice = createSlice({
       indexGhe === -1 ? cloneDSDatGhe.push(action.payload)
       : cloneDSDatGhe.splice(indexGhe, 1);
       state.dSDatGhe = cloneDSDatGhe;
+      // console.log("🚀 ~ cloneDSDatGhe:", cloneDSDatGhe)
     },
   }
 });

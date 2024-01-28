@@ -24,3 +24,16 @@
     width: 650px;
     height: 20px;
 }
+.tables th, .tables td{
+  border: 1px solid black;
+}
+.giaVeDaDat{
+  display: inline-block;
+  width: 112%;
+}
+:where(.css-dev-only-do-not-override-gzal6t).ant-tabs .ant-tabs-tab {
+  font-size: 16px;
+}
+.titleTicket{
+  color: #c6a63d;
+}

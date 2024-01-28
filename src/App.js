@@ -14,6 +14,7 @@ import FormSignup from "./Pages/LoginPage/FormSignup";
 import Layout from "./Layouts/Layout";
 import BookingMovie from "./Pages/BookingMovie/BookingMovie";
 import PrivateLayout from "./Layouts/PrivateLayout";
+import TabDatVe from "./Pages/BookingMovie/TabDatVe";
 // import FormLogin from "./Pages/LoginPage/FormLogin";
 
 function App() {
@@ -34,7 +35,7 @@ function App() {
             path="/booking/:idMa"
             element={
               <PrivateLayout>
-                <BookingMovie />
+                  <TabDatVe/>
               </PrivateLayout>
             }
           />
