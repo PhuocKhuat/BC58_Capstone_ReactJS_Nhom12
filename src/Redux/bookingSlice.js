@@ -4,6 +4,7 @@ import { ThongTinLichChieu } from '../Object/ThongTinPhongVe';
 const initialState = {
     thongTinRap: new ThongTinLichChieu(),
     dSDatGhe: [],
+    resultBooking: null,
 }
 
 const bookingSlice = createSlice({
@@ -22,11 +23,15 @@ const bookingSlice = createSlice({
       state.dSDatGhe = cloneDSDatGhe;
       // console.log("🚀 ~ cloneDSDatGhe:", cloneDSDatGhe)
     },
+    setResultBooking : (state, action)=>{
+      state.resultBooking = action.payload;
+    },
+    setClearDSGhe: (state, action)=>{
+      state.dSDatGhe = [];
+    },
   }
 });
 
-export const { setTTRap, setDSDatGhe } = bookingSlice.actions
+export const { setTTRap, setDSDatGhe, setResultBooking, setClearDSGhe } = bookingSlice.actions
 
 export default bookingSlice.reducer
-
-// Tới 32:04

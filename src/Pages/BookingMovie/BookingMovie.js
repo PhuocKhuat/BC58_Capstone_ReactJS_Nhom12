@@ -2,7 +2,7 @@ import React, { Fragment, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { https } from "../../Service/api";
 import { useParams } from "react-router-dom";
-import { setDSDatGhe, setTTRap } from "../../Redux/bookingSlice";
+import { setClearDSGhe, setDSDatGhe, setTTRap } from "../../Redux/bookingSlice";
 import { CloseOutlined } from "@ant-design/icons";
 import "./styleBooking.css";
 import "../../Common/common.css";
@@ -17,26 +17,20 @@ export default function BookingMovie(props) {
   let { idMa } = useParams();
   let dispatch = useDispatch();
   useEffect(() => {
-    https
-      .get(`/api/QuanLyDatVe/LayDanhSachPhongVe?MaLichChieu=${idMa}`)
-      .then((res) => {
-        console.log(res);
-        dispatch(setTTRap(res.data.content));
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    fetchMaLichChieu();
   }, []);
-  let handleDatVe = (thongTinDatVe = new ThongTinDatVe()) => {
-    // let datVes = datVe;
-    https
-      .post("/api/QuanLyDatVe/DatVe", thongTinDatVe)
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+  let fetchMaLichChieu = async (thongTinDatVe) => {
+    try {
+      let res = await https.get(
+        `/api/QuanLyDatVe/LayDanhSachPhongVe?MaLichChieu=${idMa}`
+      );
+      dispatch(setTTRap(res.data.content));
+    } catch (error) {}
+  };
+  let handleDatVe = async (thongTinDatVe = new ThongTinDatVe()) => {
+    try {
+       await https.post("/api/QuanLyDatVe/DatVe", thongTinDatVe);
+    } catch (error) {}
   };
   let { danhSachGhe, thongTinPhim } = thongTinRap;
   const renderGhe = () =>
@@ -142,15 +136,17 @@ export default function BookingMovie(props) {
           <div className="bookingMovie flex flex-col justify-end items-center">
             <button
               className="text-center btnBooking p-3 font-bold w-full text-white"
-              onClick={() => {
+              onClick={async () => {
                 let thongTinDatVe = new ThongTinDatVe();
                 thongTinDatVe.maLichChieu = idMa;
                 thongTinDatVe.danhSachVe = dSDatGhe;
-                console.log(
-                  "🚀 ~ BookingMovie ~ thongTinDatVe:",
-                  thongTinDatVe
-                );
+                // console.log(
+                //   "🚀 ~ BookingMovie ~ thongTinDatVe:",
+                //   thongTinDatVe
+                // );
                 handleDatVe(thongTinDatVe);
+                await fetchMaLichChieu(thongTinDatVe.maLichChieu);
+                await dispatch(setClearDSGhe());
               }}
             >
               Booking Movie
@@ -161,3 +157,5 @@ export default function BookingMovie(props) {
     </div>
   );
 }
+
+//TỚI 21:42

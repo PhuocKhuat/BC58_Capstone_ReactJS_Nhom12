@@ -98,14 +98,7 @@ export default function DetailPage() {
               <div className="mt-2">
                 <Rate disabled defaultValue={detail?.danhGia / 2} />
               </div>
-              <span className="muaVe">
-                <NavLink
-                  to="/booking"
-                  className="px-2 py-1 rounded inline-block buyTicket mt-3"
-                >
-                  BUY TICKET
-                </NavLink>
-              </span>
+              
             </div>
           </div>
         </div>

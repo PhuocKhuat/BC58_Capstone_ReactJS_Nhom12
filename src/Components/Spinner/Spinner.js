@@ -15,6 +15,7 @@ export default function Spinner() {
           position: "fixed",
           top: 0,
           left: 0,
+          zIndex: 100,
         }}
         className="flex justify-center items-center z-10"
       >

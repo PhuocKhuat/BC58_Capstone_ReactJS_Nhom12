@@ -13,7 +13,7 @@ export default function List({ dSPhim }) {
               <p className="tenPhim">{phim.tenPhim}</p>
               <div className="danhSachGio">
                 {phim.lstLichChieuTheoPhim.map((khungGio, index) => (
-                  <NavLink to="/booking" key={index} className="khungGio hover:border-black duration-200">
+                  <NavLink to={`/booking/${khungGio.maLichChieu}`} key={index} className="khungGio hover:border-black duration-200">
                     {moment(khungGio.ngayChieuGioChieu).format(
                       "MMM ddd D - hh:mm A"
                     )}
