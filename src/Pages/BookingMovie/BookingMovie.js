@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { https } from "../../Service/api";
 import { useParams } from "react-router-dom";
 import {
+  setCNhatGheKhach,
   setClearDSGhe,
   setSwitchTab,
   setTTRap,
@@ -13,6 +14,7 @@ import "../../Common/common.css";
 import ThongTinDatVe from "../../Object/ThongTinDatVe";
 import { connection } from "../..";
 import { actionBooking } from "../../Actions/actionBooking";
+import _ from "lodash";
 
 export default function BookingMovie() {
   let { user } = useSelector((state) => state.movieSlice);
@@ -34,11 +36,39 @@ export default function BookingMovie() {
         `/api/QuanLyDatVe/LayDanhSachPhongVe?MaLichChieu=${idMa}`
       );
       dispatch(setTTRap(res.data.content));
-      connection.on("loadDanhSachGheDaDat", (dsGheKhachDat) =>{
-        console.log("loadDanhSachGheDaDat", dsGheKhachDat);
+      // Vừa load trang của mình thì mất ghế của mình khi chưa ấn và cập nhật ghế của người khác.
+      connection.invoke("loadDanhSachGhe", idMa);
+      //Có 1 client nào đặt vé thành công thì load lại danh sách của bộ phim đó.
+      connection.on("datVeThanhCong", ()=>{
+        fetchMaLichChieu(thongTinDatVe);
       })
+      connection.on("loadDanhSachGheDaDat", (dsGheKhachDat) => {
+        console.log("loadDanhSachGheDaDat", dsGheKhachDat);
+        // Loại mình khỏi danh sách.
+        dsGheKhachDat = dsGheKhachDat.filter(
+          (taiKhoan) => taiKhoan.taiKhoan !== user.taiKhoan
+        );
+        // Gộp dSGhe của nhiều user thành 1 mảng chung.
+        let arrKhachDat = dsGheKhachDat.reduce((acc, item, index) => {
+          return [...acc, JSON.parse(item.danhSachGhe)];
+        });
+        // console.log("🚀 ~ arrKhachDat ~ arrKhachDat:", arrKhachDat);
+        // Đưa dữ liệu khách đặt cập nhật redux.
+        arrKhachDat = _.unionBy(arrKhachDat, "maGhe");
+        // Đẩy lên redux.
+        dispatch(setCNhatGheKhach(arrKhachDat));
+        //Khi ấn ghế, load trang thì mất ghế của mình và mất ghế của mình ở trang người khác.
+        window.addEventListener("beforeunload", clearGhe);
+        return ()=>{
+          clearGhe();
+          window.removeEventListener("huyDat", clearGhe);
+        }
+      });
     } catch (error) {}
   };
+  let clearGhe = ()=>{
+    connection.invoke("huyDat", user.taiKhoan, idMa);
+  }
   let handleDatVe = async (thongTinDatVe = new ThongTinDatVe()) => {
     try {
       await https.post("/api/QuanLyDatVe/DatVe", thongTinDatVe);
@@ -103,7 +133,7 @@ export default function BookingMovie() {
           </div>
         </div>
         <div className="col-span-3 bg-white mt-5 p-5">
-            <h3 className="text-yellow-500 text-xl">Seat selection details</h3>
+          <h3 className="text-yellow-500 text-xl">Seat selection details</h3>
           <div className="mt-5 text-center flex justify-center tables">
             <table className="w-4/5 divide-y divide-gray-200">
               <thead className="p-5 bg-gray-50">
@@ -113,7 +143,7 @@ export default function BookingMovie() {
                   <th>Seats are being booked</th>
                 </tr>
                 <tr>
-                <td>
+                  <td>
                     <p className="ghe">00</p>
                   </td>
                   <td>
@@ -205,7 +235,9 @@ export default function BookingMovie() {
                   handleDatVe(thongTinDatVe);
                   await fetchMaLichChieu(thongTinDatVe.maLichChieu);
                   await dispatch(setClearDSGhe());
-                  await dispatch(setSwitchTab());
+                  dispatch(setSwitchTab());
+                  //Khi ấn vào ghế của mình thì tự động load trang của người khác
+                  connection.invoke("datGheThanhCong", user.taiKhoan, thongTinDatVe.maLichChieu);
                 }}
               >
                 Booking Movie

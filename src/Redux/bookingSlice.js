@@ -40,9 +40,12 @@ const bookingSlice = createSlice({
     setGheUserKhacDat: (state, action)=>{
       state.gheUserKhacDat = action.payload;
     },
+    setCNhatGheKhach : (state, action)=>{
+      state.dSDatGhe = action.payload;
+    },
   }
 });
 
-export const { setTTRap, setDSDatGhe, setResultBooking, setClearDSGhe, setSwitchTab, setSwitchBackToTab, setGheUserKhacDat } = bookingSlice.actions
+export const { setTTRap, setDSDatGhe, setResultBooking, setClearDSGhe, setSwitchTab, setSwitchBackToTab, setGheUserKhacDat, setCNhatGheKhach } = bookingSlice.actions
 
 export default bookingSlice.reducer

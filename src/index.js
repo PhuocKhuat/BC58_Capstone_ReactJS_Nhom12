@@ -19,6 +19,17 @@ export const connection = new signalR.HubConnectionBuilder()
   .withUrl(`${DOMAIN}/DatVeHub`)
   .configureLogging(signalR.LogLevel.Information)
   .build();
+  export let store = configureStore({
+    reducer: {
+      movieSlice,
+      spinnerSlice,
+      carouselSlice,
+      footerSlice,
+      tapMovieSlice,
+      detailSlice,
+      bookingSlice,
+    },
+  });
 connection.start().then(() => {
   const root = ReactDOM.createRoot(document.getElementById("root"));
   root.render(
@@ -27,17 +38,7 @@ connection.start().then(() => {
     </Provider>
   );
 });
-export let store = configureStore({
-  reducer: {
-    movieSlice,
-    spinnerSlice,
-    carouselSlice,
-    footerSlice,
-    tapMovieSlice,
-    detailSlice,
-    bookingSlice,
-  },
-});
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
