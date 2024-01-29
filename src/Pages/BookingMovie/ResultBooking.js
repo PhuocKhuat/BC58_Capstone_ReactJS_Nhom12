@@ -21,7 +21,7 @@ export default function ResultBooking() {
       });
   }, []);
   const renderResult = () => resultBooking?.thongTinDatVe?.map((ve, index) => (
-      <div className="p-2 lg:w-1/3 md:w-1/2 w-full" key={index}>
+      <div className="p-2 lg:w-1/3 md:w-1/2 w-full historyPhim" key={index}>
         <div className="h-full flex items-center border-gray-200 border p-4 rounded-lg">
           <img
             alt="team"
@@ -43,8 +43,8 @@ export default function ResultBooking() {
     ));
 
   return (
-    <section className="text-gray-600 body-font">
-      <div className="px-5 py-24 mx-auto">
+    <section className="text-gray-600 body-font resultBooking">
+      <div className="px-5 py-24 mx-auto ticketResult">
         <div className="flex flex-col text-center w-full mb-20">
           <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 titleTicket">
             Tickets Results
@@ -54,7 +54,7 @@ export default function ResultBooking() {
             movie!
           </p>
         </div>
-        <div className="flex flex-wrap -m-2">
+        <div className="flex flex-wrap -m-2 historyNPhim">
           {renderResult()}
         </div>
       </div>

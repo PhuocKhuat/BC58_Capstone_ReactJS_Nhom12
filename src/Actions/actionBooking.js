@@ -7,7 +7,7 @@ export const actionBooking = (ghe, idMa) => {
     await dispatch(setDSDatGhe(ghe));
     //Call API về backend.
     let danhSachGheDangDat = getState().bookingSlice.dSDatGhe;
-    let taiKhoan = getState().movieSlice.user?.taiKhoan;
+    let taiKhoan = getState().movieSlice.user.taiKhoan;
     console.log("🚀 ~ danhSachGhe.map ~ dSDatGhe:", danhSachGheDangDat);
     console.log("🚀 ~ danhSachGhe.map ~ taiKhoan:", taiKhoan);
     console.log("idMa", idMa);

@@ -39,9 +39,9 @@ export default function BookingMovie() {
       // Vừa load trang của mình thì mất ghế của mình khi chưa ấn và cập nhật ghế của người khác.
       connection.invoke("loadDanhSachGhe", idMa);
       //Có 1 client nào đặt vé thành công thì load lại danh sách của bộ phim đó.
-      connection.on("datVeThanhCong", ()=>{
+      connection.on("datVeThanhCong", () => {
         fetchMaLichChieu(thongTinDatVe);
-      })
+      });
       connection.on("loadDanhSachGheDaDat", (dsGheKhachDat) => {
         console.log("loadDanhSachGheDaDat", dsGheKhachDat);
         // Loại mình khỏi danh sách.
@@ -59,16 +59,16 @@ export default function BookingMovie() {
         dispatch(setCNhatGheKhach(arrKhachDat));
         //Khi ấn ghế, load trang thì mất ghế của mình và mất ghế của mình ở trang người khác.
         window.addEventListener("beforeunload", clearGhe);
-        return ()=>{
+        return () => {
           clearGhe();
           window.removeEventListener("huyDat", clearGhe);
-        }
+        };
       });
     } catch (error) {}
   };
-  let clearGhe = ()=>{
+  let clearGhe = () => {
     connection.invoke("huyDat", user.taiKhoan, idMa);
-  }
+  };
   let handleDatVe = async (thongTinDatVe = new ThongTinDatVe()) => {
     try {
       await https.post("/api/QuanLyDatVe/DatVe", thongTinDatVe);
@@ -129,10 +129,10 @@ export default function BookingMovie() {
           <div className="mt-5 relative">
             <div className="bg-black manHinh left-0 top-0 absolute mb-3"></div>
             <div className="trapezoid mt-3 relative top-7 "></div>
-            <div className="mt-8 w-11/12">{renderGhe()}</div>
+            <div className="dSGhe mt-8 w-11/12">{renderGhe()}</div>
           </div>
         </div>
-        <div className="col-span-3 bg-white mt-5 p-5">
+        <div className="col-span-3 bg-white mt-5 p-5 col3">
           <h3 className="text-yellow-500 text-xl">Seat selection details</h3>
           <div className="mt-5 text-center flex justify-center tables">
             <table className="w-4/5 divide-y divide-gray-200">
@@ -237,7 +237,134 @@ export default function BookingMovie() {
                   await dispatch(setClearDSGhe());
                   dispatch(setSwitchTab());
                   //Khi ấn vào ghế của mình thì tự động load trang của người khác
-                  connection.invoke("datGheThanhCong", user.taiKhoan, thongTinDatVe.maLichChieu);
+                  connection.invoke(
+                    "datGheThanhCong",
+                    user.taiKhoan,
+                    thongTinDatVe.maLichChieu
+                  );
+                }}
+              >
+                Booking Movie
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div className="block md:hidden">
+          <div>
+            <h3 className="text-yellow-500 text-xl text-center seatSelectionMD">
+              Seat selection details
+            </h3>
+            <div className="mt-5 text-center flex justify-center tablesMD">
+              <table className="w-4/5 divide-y divide-gray-200">
+                <thead className="p-5 bg-gray-50">
+                  <tr>
+                    <th>Seats not yet booked</th>
+                    <th>Seats are placed</th>
+                    <th>Seats are being booked</th>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p className="ghe">00</p>
+                    </td>
+                    <td>
+                      <p className="ghe gheDaDat">X</p>
+                    </td>
+                    <td>
+                      <p className="ghe gheDangDat">00</p>
+                    </td>
+                  </tr>
+                </thead>
+                <tbody className="bg-white divide-y divide-gray-200">
+                  <tr>
+                    <th>Vip Seats</th>
+                    <th>Newly booked seats</th>
+                    <th>Other users have made reservations</th>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p className="ghe gheVip">00</p>
+                    </td>
+                    <td>
+                      <p className="ghe gheMinhDat">
+                        <UserOutlined />
+                      </p>
+                    </td>
+                    <td>
+                      <p className="ghe gheUserKhacDat">
+                        <UserOutlined />
+                      </p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div className="col3MD">
+            <h3 className="text-center border-b-2 border-gray-200 text-yellow-500 text-2xl mb-3 mt-3">
+              {dSDatGhe
+                .reduce((acc, ghe, index) => acc + ghe.giaVe, 0)
+                .toLocaleString()}{" "}
+              VND
+            </h3>
+            <div className="border-b-2 border-gray-200">
+              <h3 className="text-xl">{thongTinPhim.tenPhim}</h3>
+              <p>Show date: {thongTinPhim.ngayChieu}</p>
+              <p>Showtime: {thongTinPhim.gioChieu}</p>
+              <p className="mb-3">
+                Movie theater name: {thongTinPhim.tenCumRap}
+              </p>
+            </div>
+            <div className="grid grid-cols-2 my-3 border-b-2 border-gray-200">
+              <div className="text-left">
+                <span className="text-amber-800 text-lg">Chair: </span>
+                {dSDatGhe.map((gheDangDat, index) => {
+                  return (
+                    <span key={index} className="text-green-500 space-x-5">
+                      {gheDangDat.stt},{(index + 1) % 9 === 0 ? <br /> : ""}
+                    </span>
+                  );
+                })}
+              </div>
+              <div className="text-right mb-3">
+                <span className="text-black giaVeDaDat">
+                  {dSDatGhe
+                    .reduce((acc, ghe, index) => acc + ghe.giaVe, 0)
+                    .toLocaleString()}{" "}
+                  VND
+                </span>
+              </div>
+            </div>
+            <div className="my-3 border-b-2 border-gray-200">
+              <p>Email</p>
+              <p className="mb-3">{user.email}</p>
+            </div>
+            <div className="my-3 border-b-2 border-gray-200">
+              <p>Phone Number</p>
+              <p className="mb-3">{user.soDT}</p>
+            </div>
+            <div className="bookingMovie flex items-center">
+              <button
+                className="text-center btnBooking p-3 font-bold w-full text-white"
+                onClick={async () => {
+                  let thongTinDatVe = new ThongTinDatVe();
+                  thongTinDatVe.maLichChieu = idMa;
+                  thongTinDatVe.danhSachVe = dSDatGhe;
+                  // console.log(
+                  //   "🚀 ~ BookingMovie ~ thongTinDatVe:",
+                  //   thongTinDatVe
+                  // );
+                  handleDatVe(thongTinDatVe);
+                  await fetchMaLichChieu(thongTinDatVe.maLichChieu);
+                  await dispatch(setClearDSGhe());
+                  dispatch(setSwitchTab());
+                  //Khi ấn vào ghế của mình thì tự động load trang của người khác
+                  connection.invoke(
+                    "datGheThanhCong",
+                    user.taiKhoan,
+                    thongTinDatVe.maLichChieu
+                  );
                 }}
               >
                 Booking Movie

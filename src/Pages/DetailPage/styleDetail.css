@@ -47,11 +47,70 @@
 .tabCol3a{
   width: 88%;
 }
+.detaiAll{
+  width: 966px;
+  overflow: hidden;
+}
+.detailMovie :where(.css-dev-only-do-not-override-gzal6t).ant-tabs .ant-tabs-content {
+  width: 100%;
+}
 /* Responsive */
+@media screen and (max-width: 1000px) {
+  .detailMovie .ant-tabs .ant-tabs-left .border .css-dev-only-do-not-override-gzal6t{
+    width: 87vw;
+  }
+  .detaiAll{
+    width: 89vw !important;
+  }
+  .khungGioChieu{
+    margin: 10px 35px 16px 8px;
+  }
+}
 @media screen and (max-width: 768px) {
   .imgDetail {
     width: 89vw !important;
     height: 28vw;
+  }
+  .detaiAll {
+    width: 93vw !important;
+}
+}
+@media screen and (max-width: 640px) {
+  .detailMovie :where(.css-dev-only-do-not-override-gzal6t).ant-tabs >.ant-tabs-nav, :where(.css-dev-only-do-not-override-gzal6t).ant-tabs >div>.ant-tabs-nav {
+    margin-left: 0;
+  }
+  .detailMovie :where(.css-dev-only-do-not-override-gzal6t).ant-tabs >.ant-tabs-nav, :where(.css-dev-only-do-not-override-gzal6t).ant-tabs >div>.ant-tabs-nav {
+    width: 20%;
+}
+.detailMovie :where(.css-dev-only-do-not-override-gzal6t).ant-tabs >.ant-tabs-nav .ant-tabs-nav-list, :where(.css-dev-only-do-not-override-gzal6t).ant-tabs >div>.ant-tabs-nav .ant-tabs-nav-list {
+  width: 100%;
+}
+.detailMovie .danhSachGio{
+  grid-template-columns: auto;
+}
+.detailMovie :where(.css-dev-only-do-not-override-gzal6t).ant-tabs-left >.ant-tabs-nav .ant-tabs-tab, :where(.css-dev-only-do-not-override-gzal6t).ant-tabs-right >.ant-tabs-nav .ant-tabs-tab, :where(.css-dev-only-do-not-override-gzal6t).ant-tabs-left >div>.ant-tabs-nav .ant-tabs-tab, :where(.css-dev-only-do-not-override-gzal6t).ant-tabs-right >div>.ant-tabs-nav .ant-tabs-tab {
+  padding: 8px 24px;
+}
+.detailMovie :where(.css-dev-only-do-not-override-gzal6t).ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  width: 128%;
+}
+/* Cột 2*/
+.detailMovie :where(.css-dev-only-do-not-override-gzal6t).ant-tabs .ant-tabs-content {
+  width: 220vw;
+}
+.detailMovie .khungGioChieu{
+  width: 28vw;
+}
+}
+@media screen and (max-width: 600px) {
+  .detailMovie :where(.css-dev-only-do-not-override-gzal6t).ant-tabs .ant-tabs-content {
+    width: 297%;
+  }
+  .detailMovie .khungGioChieu{
+    width: 28vw;
+  }
+  .detailMovie :where(.css-dev-only-do-not-override-gzal6t).ant-tabs .ant-tabs-content {
+    width: 210vw;
   }
 }
 @media screen and (max-width: 560px) {
@@ -82,6 +141,20 @@
     display: flex;
     justify-content: center;
   }
+  .detailMovie :where(.css-dev-only-do-not-override-gzal6t).ant-tabs .ant-tabs-content {
+    width: 200vw;
+  }
+  .detailMovie .khungGioChieu {
+    width: 31vw;
+}
+}
+@media screen and (max-width: 500px) {
+  .detailMovie :where(.css-dev-only-do-not-override-gzal6t).ant-tabs .ant-tabs-content {
+    width: 180vw;
+  }
+  .detailMovie .khungGioChieu {
+    width: 33vw;
+} 
 }
 @media screen and (max-width: 440px) {
   .imgDetail {

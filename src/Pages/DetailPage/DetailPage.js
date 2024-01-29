@@ -13,7 +13,7 @@ export default function DetailPage() {
   let { detail } = useSelector((state) => state.detailSlice);
   //   console.log("🚀 ~ DetailPage ~ detail:", detail)
   let { tTLChieu } = useSelector((state) => state.detailSlice);
-  console.log("🚀 ~ DetailPage ~ tTLChieu:", tTLChieu)
+  console.log("🚀 ~ DetailPage ~ tTLChieu:", tTLChieu);
   let dispatch = useDispatch();
   useEffect(() => {
     https
@@ -43,31 +43,44 @@ export default function DetailPage() {
   const onChange = (key) => {
     console.log(key);
   };
-  const items = tTLChieu?.heThongRapChieu?.map((heThongRap, index) =>{
-    return{
+  const items = tTLChieu?.heThongRapChieu?.map((heThongRap, index) => {
+    return {
       key: heThongRap.tenHeThongRap,
-      label: <img key={index} alt="hình ảnh hệ thống rạp" src={heThongRap?.logo} className="w-12"/>,
-      children: (
-        <Tabs defaultActiveKey="1" tabPosition="left" items={
-          heThongRap?.cumRapChieu.map((cumRap, index)=>{
-            return{
-              key: cumRap?.tenCumrap,
-              label: <div className="tabCol2" key={index}>
-                <h2 className="tenCumRap">{cumRap?.tenCumRap}</h2>
-                <Tooltip title={cumRap?.diaChi}>
-                <p className="diaChi">{cumRap?.diaChi}</p>
-                </Tooltip>
-              </div>,
-              children: <ListGioChieu ListChieuPhim={cumRap?.lichChieuPhim}/>
-            }
-          })
-        } />
+      label: (
+        <img
+          key={index}
+          alt="hình ảnh hệ thống rạp"
+          src={heThongRap?.logo}
+          className="w-12"
+        />
       ),
-    }
+      children: (
+        <Tabs
+          defaultActiveKey="1"
+          tabPosition="left"
+          items={heThongRap?.cumRapChieu.map((cumRap, index) => {
+            return {
+              key: cumRap?.tenCumrap,
+              label: (
+                <div className="tabCol2" key={index}>
+                  <Tooltip title={cumRap?.tenCumRap}>
+                    <h2 className="tenCumRap truncate">{cumRap?.tenCumRap}</h2>
+                  </Tooltip>
+                  <Tooltip title={cumRap?.diaChi}>
+                    <p className="diaChi truncate">{cumRap?.diaChi}</p>
+                  </Tooltip>
+                </div>
+              ),
+              children: <ListGioChieu ListChieuPhim={cumRap?.lichChieuPhim} />,
+            };
+          })}
+        />
+      ),
+    };
   });
   return (
-    <div className="container">
-      <div className="ms-3 sm:ms-5">
+    <div className="container detailMovie">
+      <div className="ms-3 sm:ms-5 detaiAll">
         <div className="movieContent">
           <span className="movieContents">Movie Content</span>
         </div>
@@ -98,12 +111,18 @@ export default function DetailPage() {
               <div className="mt-2">
                 <Rate disabled defaultValue={detail?.danhGia / 2} />
               </div>
-              
             </div>
           </div>
         </div>
         <div className="mt-8">
-          <Tabs tabPosition="left" defaultActiveKey="1" onChange={onChange} items={items} style={{ height: 180}} className="border" />
+          <Tabs
+            tabPosition="left"
+            defaultActiveKey="1"
+            onChange={onChange}
+            items={items}
+            style={{ height: 180 }}
+            className="border"
+          />
         </div>
       </div>
     </div>

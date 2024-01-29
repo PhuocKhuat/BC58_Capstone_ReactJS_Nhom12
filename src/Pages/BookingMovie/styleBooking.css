@@ -1,8 +1,9 @@
 .bookingMovie {
-  height: 55vh;
+  height: 50vh;
 }
 .btnBooking {
   background-color: #c6a63d;
+  width: 100%;
 }
 .btnBooking:hover {
   border: 1px solid #c6a63d;
@@ -17,23 +18,191 @@
   height: 0;
   width: 650px;
   filter: drop-shadow(1px 36px 38px #000000);
--webkit-filter: drop-shadow(1px 36px 38px #000000);
--moz-filter: drop-shadow(1px 36px 38px #000000);
+  -webkit-filter: drop-shadow(1px 36px 38px #000000);
+  -moz-filter: drop-shadow(1px 36px 38px #000000);
 }
-.manHinh{
-    width: 650px;
-    height: 20px;
+.manHinh {
+  width: 650px;
+  height: 20px;
 }
-.tables th, .tables td{
+.tables th,
+.tables td {
   border: 1px solid black;
 }
-.giaVeDaDat{
+.giaVeDaDat {
   display: inline-block;
   width: 112%;
 }
 :where(.css-dev-only-do-not-override-gzal6t).ant-tabs .ant-tabs-tab {
   font-size: 16px;
 }
-.titleTicket{
+.titleTicket {
   color: #c6a63d;
+}
+:where(.css-dev-only-do-not-override-gzal6t).ant-tabs .ant-tabs-content {
+  width: 107%;
+}
+:where(.css-dev-only-do-not-override-gzal6t).ant-tabs >.ant-tabs-nav, :where(.css-dev-only-do-not-override-gzal6t).ant-tabs >div>.ant-tabs-nav{
+  margin-left: 34px;
+}
+@media screen and (max-width: 1286px) {
+  .col3 {
+    position: absolute;
+    left: 700px;
+  }
+  .dSGhe {
+    width: 700px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .ticketResult{
+  position: relative;
+  right: 176px;
+}
+.historyNPhim{
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+.historyPhim{
+  width: 32vw;  
+}
+}
+@media screen and (max-width: 1000px) {
+  .ticketResult{
+    position: relative;
+    right: 0vw;
+    width: 98vw;
+  }
+}
+@media screen and (max-width: 985px) {
+  .trapezoid {
+    width: 66vw;
+  }
+  .dSGhe {
+    width: 70vw !important;
+  }
+  .manHinh {
+    width: 67vw;
+    left: 2px;
+  }
+  .col3 {
+    position: absolute;
+    left: 69vw;
+  }
+}
+@media screen and (max-width: 985px) {
+  .col3 {
+    position: absolute;
+    left: 68vw;
+  }
+}
+@media screen and (max-width: 875px){
+.col3 {
+    width: 29vw;
+}
+}
+@media screen and (max-width: 768px){
+    .col3{
+      display: none;
+    }
+    .col3MD{
+        width: 92vw;
+        margin-left: 20px;
+    }
+    .giaVeDaDat {
+      width: 94%;
+    }
+    .tablesMD{
+      width: 100vw;
+    }
+    .seatSelectionMD{
+      text-align: right;
+    }
+    .tablesMD .ghe{
+      position: relative;
+      left: 52px;
+    }
+    .tablesMD .gheDangDat, .tablesMD .gheUserKhacDat{
+      position: relative;
+      left: 98px;
+    }
+    .dSGhe {
+      margin-left: 40px;
+      width: 93vw !important;
+    }
+    .trapezoid {
+      margin-left: 34px;
+      width: 88vw;
+    }
+    .manHinh {
+      width: 88vw;
+      left: 35px;
+    }
+    .ant-tabs-nav-wrap .ant-tabs-nav-wrap-ping-right{
+      margin-left: 37px;
+    }
+    .bookingMovie{
+      height: 55px;
+    }
+    .historyNPhim{
+      grid-template-columns: auto auto;
+    }
+    .historyPhim {
+      width: 47vw;
+  }
+}
+@media screen and (max-width: 595px){
+  .dSGhe {
+    margin-left: 26px;
+  }
+  .manHinh {
+    left: 30px;
+  }
+}
+@media screen and (max-width: 550px){
+  .historyNPhim{
+    grid-template-columns: auto;
+  }
+  .historyPhim {
+    width: 92vw;
+}
+}
+@media screen and (max-width: 500px){
+  .btnBooking{
+    width: 89vw;
+  }
+  .col3MD {
+    margin-left: 14px;
+}
+.dSGhe {
+  margin-left: 15px;
+}
+.trapezoid {
+  margin-left: 25px;
+}
+.manHinh {
+  left: 25px;
+}
+}
+@media screen and (max-width: 500px){
+  .tablesMD .ghe {
+    left: 20px;
+  }
+  .tablesMD .gheDangDat, .tablesMD .gheUserKhacDat {
+    left: 46px;
+}
+.col3MD {
+  width: 88vw;
+}
+}
+@media screen and (max-width: 400px){
+  .col3MD {
+    margin-left: 8px;
+  }
+  .manHinh {
+    left: 14px;
+}
+.trapezoid {
+  margin-left: 15px;
+}
 }
