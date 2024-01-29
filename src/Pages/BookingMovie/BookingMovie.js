@@ -4,7 +4,6 @@ import { https } from "../../Service/api";
 import { useParams } from "react-router-dom";
 import {
   setClearDSGhe,
-  setDSDatGhe,
   setSwitchTab,
   setTTRap,
 } from "../../Redux/bookingSlice";
@@ -12,8 +11,10 @@ import { CloseOutlined, UserOutlined } from "@ant-design/icons";
 import "./styleBooking.css";
 import "../../Common/common.css";
 import ThongTinDatVe from "../../Object/ThongTinDatVe";
+import { connection } from "../..";
+import { actionBooking } from "../../Actions/actionBooking";
 
-export default function BookingMovie(props) {
+export default function BookingMovie() {
   let { user } = useSelector((state) => state.movieSlice);
   // console.log("🚀 ~ BookingMovie ~ user:", user);
   let { thongTinRap, dSDatGhe, gheUserKhacDat } = useSelector(
@@ -23,6 +24,7 @@ export default function BookingMovie(props) {
   // console.log("🚀 ~ BookingMovie ~ danhSachGhe:", danhSachGhe)
   let { idMa } = useParams();
   let dispatch = useDispatch();
+
   useEffect(() => {
     fetchMaLichChieu();
   }, []);
@@ -32,11 +34,15 @@ export default function BookingMovie(props) {
         `/api/QuanLyDatVe/LayDanhSachPhongVe?MaLichChieu=${idMa}`
       );
       dispatch(setTTRap(res.data.content));
+      connection.on("loadDanhSachGheDaDat", (dsGheKhachDat) =>{
+        console.log("loadDanhSachGheDaDat", dsGheKhachDat);
+      })
     } catch (error) {}
   };
   let handleDatVe = async (thongTinDatVe = new ThongTinDatVe()) => {
     try {
       await https.post("/api/QuanLyDatVe/DatVe", thongTinDatVe);
+      // fetchMaLichChieu();
     } catch (error) {}
   };
   let { danhSachGhe, thongTinPhim } = thongTinRap;
@@ -66,7 +72,7 @@ export default function BookingMovie(props) {
             disabled={ghe.daDat}
             className={`ghe ${cSSgheVip} ${cSSgheDaDat} ${cSSgheDangDat} ${cSSGheMinhDat} ${cSSGheUserKhacDat}`}
             onClick={() => {
-              dispatch(setDSDatGhe(ghe));
+              dispatch(actionBooking(ghe, idMa));
             }}
           >
             {ghe.daDat ? (
@@ -200,7 +206,6 @@ export default function BookingMovie(props) {
                   await fetchMaLichChieu(thongTinDatVe.maLichChieu);
                   await dispatch(setClearDSGhe());
                   await dispatch(setSwitchTab());
-                  // window.location.reload();
                 }}
               >
                 Booking Movie
