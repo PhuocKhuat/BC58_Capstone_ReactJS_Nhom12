@@ -53,7 +53,7 @@ export default function LoginSlick() {
           </div>
         </div>
         <div className="cTKMai cTKMai2">
-          <img className="img2" alt="vePhim" src="/img/comBoBapVaVePhim.png" />
+          <img className="img2" alt="vePhim" src="/img/bapVe.png" />
           <div className="khuyenMaiBap">
           <h3 className="chuongTrinh chuongTrinh2">Couple program</h3>
           <p className="moTa">Couples who go to the movies together get free corn</p>
