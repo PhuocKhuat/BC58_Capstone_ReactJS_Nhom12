@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import {
   setCNhatGheKhach,
   setClearDSGhe,
+  setDSDatGhe,
   setSwitchTab,
   setTTRap,
 } from "../../Redux/bookingSlice";
@@ -14,7 +15,7 @@ import "../../Common/common.css";
 import ThongTinDatVe from "../../Object/ThongTinDatVe";
 import { connection } from "../..";
 import { actionBooking } from "../../Actions/actionBooking";
-import _ from "lodash";
+import  _ from "lodash";
 
 export default function BookingMovie() {
   let { user } = useSelector((state) => state.movieSlice);
@@ -65,7 +66,8 @@ export default function BookingMovie() {
           window.removeEventListener("huyDat", clearGhe);
         };
       });
-    } catch (error) {}
+    } 
+    catch (error) {}
   };
   let clearGhe = () => {
     connection.invoke("huyDat", user.taiKhoan, idMa);
@@ -73,7 +75,7 @@ export default function BookingMovie() {
   let handleDatVe = async (thongTinDatVe = new ThongTinDatVe()) => {
     try {
       await https.post("/api/QuanLyDatVe/DatVe", thongTinDatVe);
-      // fetchMaLichChieu(idMa);
+      fetchMaLichChieu(idMa);
     } catch (error) {}
   };
   let { danhSachGhe, thongTinPhim } = thongTinRap;
@@ -103,6 +105,7 @@ export default function BookingMovie() {
             disabled={ghe.daDat || cSSGheUserKhacDat !== ""}
             className={`ghe ${cSSgheVip} ${cSSgheDaDat} ${cSSgheDangDat} ${cSSGheMinhDat} ${cSSGheUserKhacDat}`}
             onClick={() => {
+              dispatch(setDSDatGhe(ghe));
               dispatch(actionBooking(ghe, idMa));
             }}
           >
@@ -377,5 +380,3 @@ export default function BookingMovie() {
     </div>
   );
 }
-
-//TỚI 21:42

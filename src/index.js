@@ -14,6 +14,8 @@ import detailSlice from "./Redux/detailSlice";
 import bookingSlice from "./Redux/bookingSlice";
 import * as signalR from '@microsoft/signalr';
 import { DOMAIN } from "./Config/config";
+import { https } from "./Service/api";
+// import { https } from "./Service/api";
 
 export const connection = new signalR.HubConnectionBuilder()
   .withUrl(`${DOMAIN}/DatVeHub`)
@@ -37,7 +39,7 @@ connection.start().then(() => {
       <App />
     </Provider>
   );
-});
+})
 
 
 // If you want to start measuring performance in your app, pass a function
