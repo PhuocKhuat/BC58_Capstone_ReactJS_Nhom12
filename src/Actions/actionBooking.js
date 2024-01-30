@@ -13,6 +13,6 @@ export const actionBooking = (ghe, idMa) => {
     console.log("idMa", idMa);
     danhSachGheDangDat = JSON.stringify(danhSachGheDangDat);
     //Call API signalR.
-    // connection.invoke('datGhe', taiKhoan, danhSachGheDangDat, idMa);
+    connection.invoke('datGhe', taiKhoan, danhSachGheDangDat, idMa);
   };
 };

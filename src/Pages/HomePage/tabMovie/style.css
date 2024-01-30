@@ -32,6 +32,9 @@
 .tabCol1{
   margin-top: 135px
 }
+.tabCol3{
+  width: 43vw;
+}
 
 /* LIST */
 .phim {
@@ -77,6 +80,15 @@
   .danhSachGio {
     grid-template-columns: auto auto;
   }
+  .allTab :where(.css-dev-only-do-not-override-gzal6t).ant-tabs >.ant-tabs-nav, :where(.css-dev-only-do-not-override-gzal6t).ant-tabs >div>.ant-tabs-nav {
+    width: 87vw;
+} 
+.allTab .border{
+  width: 93vw !important;
+}
+.allTab .tabCol3{
+  width: 92vw;
+}
 }
 @media screen and (max-width: 600px) {
   .cumKhuVuc {
@@ -92,4 +104,20 @@
   .danhSachGio {
     grid-template-columns: auto;
   }
+}
+@media screen and (max-width: 416px) {
+  .allTab :where(.css-dev-only-do-not-override-gzal6t).ant-tabs >.ant-tabs-nav, :where(.css-dev-only-do-not-override-gzal6t).ant-tabs >div>.ant-tabs-nav {
+    margin-left: 14px;
+}
+.slick-slider .slick-track{
+   height: 44vw;
+}
+}
+@media screen and (max-width: 405px) {
+  .allTab :where(.css-dev-only-do-not-override-gzal6t).ant-tabs >.ant-tabs-nav, :where(.css-dev-only-do-not-override-gzal6t).ant-tabs >div>.ant-tabs-nav {
+    margin-left: 12px;
+  }
+  .slider {
+    margin-left: 67px;
+}
 }

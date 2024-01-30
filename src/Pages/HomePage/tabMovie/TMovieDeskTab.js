@@ -50,7 +50,7 @@ const TMovieDeskTab = () => {
     };
   });
   return (
-    <div className="tabCol1">
+    <div className="tabCol1 tabMovie">
       <Tabs
       tabPosition="left"
       defaultActiveKey="1"

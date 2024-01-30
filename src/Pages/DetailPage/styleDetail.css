@@ -54,6 +54,9 @@
 .detailMovie :where(.css-dev-only-do-not-override-gzal6t).ant-tabs .ant-tabs-content {
   width: 100%;
 }
+.detailMovie :where(.css-dev-only-do-not-override-gzal6t).ant-tabs >.ant-tabs-nav .ant-tabs-nav-list, :where(.css-dev-only-do-not-override-gzal6t).ant-tabs >div>.ant-tabs-nav .ant-tabs-nav-list {
+  width: 100%;
+}
 /* Responsive */
 @media screen and (max-width: 1000px) {
   .detailMovie .ant-tabs .ant-tabs-left .border .css-dev-only-do-not-override-gzal6t{
@@ -160,4 +163,7 @@
   .imgDetail {
     margin-left: 102px;
   }
+  .detailMovie :where(.css-dev-only-do-not-override-gzal6t).ant-tabs >.ant-tabs-nav .ant-tabs-nav-list, :where(.css-dev-only-do-not-override-gzal6t).ant-tabs >div>.ant-tabs-nav .ant-tabs-nav-list {
+    width: 132%;
+}
 }

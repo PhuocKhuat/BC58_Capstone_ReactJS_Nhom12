@@ -17,7 +17,7 @@ export default function TabMovie() {
     return isNotMobile ? children : null
   }
   return (
-    <div>
+    <div className='overflow-hidden'>
       <DesktopAndTablet>
         <TMovieDeskTab/>
       </DesktopAndTablet>

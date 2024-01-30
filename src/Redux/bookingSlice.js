@@ -37,11 +37,11 @@ const bookingSlice = createSlice({
     setSwitchBackToTab: (state, action)=>{
       state.switchTab = action.payload;
     },
-    setGheUserKhacDat: (state, action)=>{
-      state.gheUserKhacDat = action.payload;
-    },
+    // setGheUserKhacDat: (state, action)=>{
+    //   state.gheUserKhacDat = action.payload;
+    // },
     setCNhatGheKhach : (state, action)=>{
-      state.dSDatGhe = action.payload;
+      state.gheUserKhacDat = action.payload;
     },
   }
 });

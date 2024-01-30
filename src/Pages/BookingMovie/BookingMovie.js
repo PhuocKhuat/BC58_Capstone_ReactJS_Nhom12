@@ -46,15 +46,16 @@ export default function BookingMovie() {
         console.log("loadDanhSachGheDaDat", dsGheKhachDat);
         // Loại mình khỏi danh sách.
         dsGheKhachDat = dsGheKhachDat.filter(
-          (taiKhoan) => taiKhoan.taiKhoan !== user.taiKhoan
+          (TaiKhoan) => TaiKhoan.taiKhoan !== user.taiKhoan
         );
         // Gộp dSGhe của nhiều user thành 1 mảng chung.
         let arrKhachDat = dsGheKhachDat.reduce((acc, item, index) => {
-          return [...acc, JSON.parse(item.danhSachGhe)];
-        });
-        // console.log("🚀 ~ arrKhachDat ~ arrKhachDat:", arrKhachDat);
-        // Đưa dữ liệu khách đặt cập nhật redux.
-        arrKhachDat = _.unionBy(arrKhachDat, "maGhe");
+          let arrGhe = JSON.parse(item.danhSachGhe);
+          return [...acc, ...arrGhe];
+        },[]);
+        console.log("🚀 ~ arrKhachDat ~ arrKhachDat:", arrKhachDat);
+        // Đưa dữ liệu khách đặt cập nhật redux và lọc những phần tử trùng nhau vì .
+        arrKhachDat = _.uniqBy(arrKhachDat, "maGhe");
         // Đẩy lên redux.
         dispatch(setCNhatGheKhach(arrKhachDat));
         //Khi ấn ghế, load trang thì mất ghế của mình và mất ghế của mình ở trang người khác.
@@ -72,7 +73,7 @@ export default function BookingMovie() {
   let handleDatVe = async (thongTinDatVe = new ThongTinDatVe()) => {
     try {
       await https.post("/api/QuanLyDatVe/DatVe", thongTinDatVe);
-      // fetchMaLichChieu();
+      // fetchMaLichChieu(idMa);
     } catch (error) {}
   };
   let { danhSachGhe, thongTinPhim } = thongTinRap;
@@ -99,7 +100,7 @@ export default function BookingMovie() {
       return (
         <Fragment key={index}>
           <button
-            disabled={ghe.daDat}
+            disabled={ghe.daDat || cSSGheUserKhacDat !== ""}
             className={`ghe ${cSSgheVip} ${cSSgheDaDat} ${cSSgheDangDat} ${cSSGheMinhDat} ${cSSGheUserKhacDat}`}
             onClick={() => {
               dispatch(actionBooking(ghe, idMa));
@@ -129,7 +130,7 @@ export default function BookingMovie() {
           <div className="mt-5 relative">
             <div className="bg-black manHinh left-0 top-0 absolute mb-3"></div>
             <div className="trapezoid mt-3 relative top-7 "></div>
-            <div className="dSGhe mt-8 w-11/12">{renderGhe()}</div>
+            <div className="dSGhe mt-8">{renderGhe()}</div>
           </div>
         </div>
         <div className="col-span-3 bg-white mt-5 p-5 col3">
