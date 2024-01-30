@@ -31,6 +31,7 @@ export default function BookingMovie() {
   useEffect(() => {
     fetchMaLichChieu();
   }, []);
+  
   let fetchMaLichChieu = async (thongTinDatVe) => {
     try {
       let res = await https.get(
@@ -105,7 +106,7 @@ export default function BookingMovie() {
             disabled={ghe.daDat || cSSGheUserKhacDat !== ""}
             className={`ghe ${cSSgheVip} ${cSSgheDaDat} ${cSSgheDangDat} ${cSSGheMinhDat} ${cSSGheUserKhacDat}`}
             onClick={() => {
-              dispatch(setDSDatGhe(ghe));
+              // dispatch(setDSDatGhe(ghe));
               dispatch(actionBooking(ghe, idMa));
             }}
           >

@@ -12,26 +12,26 @@ import footerSlice from "./Redux/footerSlice";
 import tapMovieSlice from "./Redux/tapMovieSlice";
 import detailSlice from "./Redux/detailSlice";
 import bookingSlice from "./Redux/bookingSlice";
-import * as signalR from '@microsoft/signalr';
+import * as signalR from "@microsoft/signalr";
 import { DOMAIN } from "./Config/config";
-import { https } from "./Service/api";
+
 // import { https } from "./Service/api";
 
 export const connection = new signalR.HubConnectionBuilder()
   .withUrl(`${DOMAIN}/DatVeHub`)
   .configureLogging(signalR.LogLevel.Information)
   .build();
-  export let store = configureStore({
-    reducer: {
-      movieSlice,
-      spinnerSlice,
-      carouselSlice,
-      footerSlice,
-      tapMovieSlice,
-      detailSlice,
-      bookingSlice,
-    },
-  });
+export let store = configureStore({
+  reducer: {
+    movieSlice,
+    spinnerSlice,
+    carouselSlice,
+    footerSlice,
+    tapMovieSlice,
+    detailSlice,
+    bookingSlice,
+  },
+});
 connection.start().then(() => {
   const root = ReactDOM.createRoot(document.getElementById("root"));
   root.render(
@@ -39,8 +39,7 @@ connection.start().then(() => {
       <App />
     </Provider>
   );
-})
-
+});
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
