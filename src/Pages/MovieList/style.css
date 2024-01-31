@@ -26,7 +26,7 @@
 }
 .rescriptionMovie {
   position: absolute;
-  left: 6px;
+  left: 40px;
   bottom: 10px;
   transition: all 0.75s;
 }
@@ -42,6 +42,7 @@
   font-size: 15px;
   font-weight: 600;
   background-color: #d6b13d;
+  padding: 7px 30px;
 }
 .slider .slick-list{
   margin-top: 112px;

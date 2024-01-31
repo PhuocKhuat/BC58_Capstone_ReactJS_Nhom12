@@ -31,9 +31,6 @@ export default function MovieList({movie, index}) {
         <NavLink className="px-2 py-1 rounded inline-block seeDetail" to={`/detail/${movie.maPhim}`}>
           SEE DETAIL
         </NavLink>
-        <NavLink to={`/booking/${movie.maPhim}`} className="px-2 py-1 rounded inline-block buyTicket">
-          BUY TICKET
-        </NavLink>
       </div>
     </div>
   );
