@@ -95,7 +95,7 @@
   padding: 8px 24px;
 }
 .detailMovie :where(.css-dev-only-do-not-override-gzal6t).ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
-  width: 128%;
+  width: 123%;
 }
 /* Cột 2*/
 .detailMovie :where(.css-dev-only-do-not-override-gzal6t).ant-tabs .ant-tabs-content {
@@ -166,4 +166,27 @@
   .detailMovie :where(.css-dev-only-do-not-override-gzal6t).ant-tabs >.ant-tabs-nav .ant-tabs-nav-list, :where(.css-dev-only-do-not-override-gzal6t).ant-tabs >div>.ant-tabs-nav .ant-tabs-nav-list {
     width: 132%;
 }
+}
+@media screen and (max-width: 440px) {
+.detailMovie :where(.css-gzal6t).ant-tabs-left >.ant-tabs-nav .ant-tabs-tab, :where(.css-gzal6t).ant-tabs-right >.ant-tabs-nav .ant-tabs-tab, :where(.css-gzal6t).ant-tabs-left >div>.ant-tabs-nav .ant-tabs-tab, :where(.css-gzal6t).ant-tabs-right >div>.ant-tabs-nav .ant-tabs-tab {
+  padding: 8px 15px;
+  text-align: center;
+}
+.detailMovie :where(.css-gzal6t).ant-tabs >.ant-tabs-nav .ant-tabs-nav-wrap, :where(.css-gzal6t).ant-tabs >div>.ant-tabs-nav .ant-tabs-nav-wrap{
+  width: 122px;
+}
+:where(.css-gzal6t).ant-tabs >.ant-tabs-nav .ant-tabs-nav-list, :where(.css-gzal6t).ant-tabs >div>.ant-tabs-nav .ant-tabs-nav-list{
+  width: 122px;
+}
+.detailMovie :where(.css-gzal6t).ant-tabs >.ant-tabs-nav .ant-tabs-nav-list, :where(.css-gzal6t).ant-tabs >div>.ant-tabs-nav .ant-tabs-nav-list{
+  width: 84px;
+}
+.detailMovie :where(.css-gzal6t).ant-tabs-left >.ant-tabs-content-holder >.ant-tabs-content>.ant-tabs-tabpane, :where(.css-gzal6t).ant-tabs-left >div>.ant-tabs-content-holder >.ant-tabs-content>.ant-tabs-tabpane {
+  padding-left: 0px;
+}
+}
+@media screen and (max-width: 440px) {
+  :where(.css-gzal6t).ant-tabs >.ant-tabs-nav .ant-tabs-nav-list, :where(.css-gzal6t).ant-tabs >div>.ant-tabs-nav .ant-tabs-nav-list{
+    width: 74px;
+  }
 }
