@@ -238,9 +238,10 @@ export default function BookingMovie() {
                   //   thongTinDatVe
                   // );
                   handleDatVe(thongTinDatVe);
-                  await fetchMaLichChieu(thongTinDatVe.maLichChieu);
-                  await dispatch(setClearDSGhe());
+                  fetchMaLichChieu(thongTinDatVe.maLichChieu);
+                  dispatch(setClearDSGhe());
                   dispatch(setSwitchTab());
+                  // window.location.reload();
                   //Khi ấn vào ghế của mình thì tự động load trang của người khác
                   // connection.invoke(
                   //   "datGheThanhCong",
