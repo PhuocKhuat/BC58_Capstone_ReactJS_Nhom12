@@ -85,6 +85,11 @@
 .formSignup :where(.css-dev-only-do-not-override-gzal6t).ant-form-item .ant-form-item-label >label {
   display: inline !important;
 }
+.formSignup .BTN{
+  padding: 18px !important;
+  background-color: #dab846 !important;
+  width: 100%;
+}
 .truongDuLieu{
   padding: 4px;
 }
