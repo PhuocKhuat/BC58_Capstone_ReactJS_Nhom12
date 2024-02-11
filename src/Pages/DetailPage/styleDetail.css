@@ -180,7 +180,7 @@
   text-align: center;
 }
 .detailMovie :where(.css-gzal6t).ant-tabs >.ant-tabs-nav .ant-tabs-nav-wrap, :where(.css-gzal6t).ant-tabs >div>.ant-tabs-nav .ant-tabs-nav-wrap{
-  width: 122px;
+  width: 100px !important;
 }
 :where(.css-gzal6t).ant-tabs >.ant-tabs-nav .ant-tabs-nav-list, :where(.css-gzal6t).ant-tabs >div>.ant-tabs-nav .ant-tabs-nav-list{
   width: 122px;
@@ -196,6 +196,10 @@
   :where(.css-gzal6t).ant-tabs >.ant-tabs-nav .ant-tabs-nav-list, :where(.css-gzal6t).ant-tabs >div>.ant-tabs-nav .ant-tabs-nav-list{
     width: 74px;
   }
+  .detailMovie .tenCumRap{
+    position: relative;
+    right: 93px;
+  }
 }
 @media screen and (max-width: 387px) {
   :where(.css-gzal6t).ant-tabs-left >.ant-tabs-nav .ant-tabs-ink-bar, :where(.css-gzal6t).ant-tabs-left >div>.ant-tabs-nav .ant-tabs-ink-bar {
@@ -209,6 +213,6 @@
     right: 93px;
   }
   .detailMovie :where(.css-gzal6t).ant-tabs-left >.ant-tabs-nav .ant-tabs-ink-bar, :where(.css-gzal6t).ant-tabs-left >div>.ant-tabs-nav .ant-tabs-ink-bar{
-    left: 120px;
+    left: 120px !important;
   }
 }
