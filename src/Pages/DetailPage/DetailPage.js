@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { NavLink, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { https } from "../../Service/api";
 import { useDispatch, useSelector } from "react-redux";
 import { setDetail, settTLChieu } from "../../Redux/detailSlice";

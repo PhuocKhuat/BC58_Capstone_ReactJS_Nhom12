@@ -19,7 +19,7 @@ const TabMovieMobile = () => {
     return {
       key: heThongRap.maHeThongRap,
       label: <div className="">
-        <img alt="" src={heThongRap.logo} className="w-14" key={index} />
+        <img alt="" src={heThongRap.logo} className="w-14 imgHeThongRap" key={index} />
         <hr className="w-full mt-4"/>
       </div>,
       children: (

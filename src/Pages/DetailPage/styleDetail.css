@@ -88,6 +88,13 @@
 .detailMovie :where(.css-dev-only-do-not-override-gzal6t).ant-tabs >.ant-tabs-nav .ant-tabs-nav-list, :where(.css-dev-only-do-not-override-gzal6t).ant-tabs >div>.ant-tabs-nav .ant-tabs-nav-list {
   width: 100%;
 }
+.detailMovie :where(.css-gzal6t).ant-tabs >.ant-tabs-nav .ant-tabs-nav-list, :where(.css-gzal6t).ant-tabs >div>.ant-tabs-nav .ant-tabs-nav-list {
+  width: 32vw;
+}
+.detailMovie .tenCumRap{
+  position: relative;
+  right: 94px;
+}
 .detailMovie .danhSachGio{
   grid-template-columns: auto;
 }
@@ -185,8 +192,23 @@
   padding-left: 0px;
 }
 }
-@media screen and (max-width: 440px) {
+@media screen and (max-width: 410px) {
   :where(.css-gzal6t).ant-tabs >.ant-tabs-nav .ant-tabs-nav-list, :where(.css-gzal6t).ant-tabs >div>.ant-tabs-nav .ant-tabs-nav-list{
     width: 74px;
+  }
+}
+@media screen and (max-width: 387px) {
+  :where(.css-gzal6t).ant-tabs-left >.ant-tabs-nav .ant-tabs-ink-bar, :where(.css-gzal6t).ant-tabs-left >div>.ant-tabs-nav .ant-tabs-ink-bar {
+    right: 0;
+    transform: translate(37px, -33px) !important;
+  }
+}
+@media screen and (max-width: 365px) {
+  .detailMovie .tenCumRap{
+    position: relative;
+    right: 93px;
+  }
+  .detailMovie :where(.css-gzal6t).ant-tabs-left >.ant-tabs-nav .ant-tabs-ink-bar, :where(.css-gzal6t).ant-tabs-left >div>.ant-tabs-nav .ant-tabs-ink-bar{
+    left: 120px;
   }
 }

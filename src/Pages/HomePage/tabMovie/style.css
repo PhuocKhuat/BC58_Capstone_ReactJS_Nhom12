@@ -121,3 +121,18 @@
     margin-left: 67px;
 }
 }
+@media screen and (max-width: 440px) {
+  .imgHeThongRap{
+    margin: 0px 26px 0 11px;
+  }
+}
+@media screen and (max-width: 370px) {
+  .imgMovie{
+    height: 330px ;
+  }
+}
+@media screen and (max-width: 340px) {
+  .imgMovie {
+    height: 284px;
+  }
+}
